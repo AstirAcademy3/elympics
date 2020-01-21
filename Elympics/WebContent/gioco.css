@@ -1,0 +1,79 @@
+body{
+	margin: 0;
+}
+::-webkit-scrollbar {width: 0px}
+.menu{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #f0f0f0 !important;
+	height: 70px;
+	z-index: 99;
+	margin: auto;
+	border-bottom: 1px solid; 
+}
+#container{
+	margin: auto;
+	background-color: #f0f0f0;
+	width: 60%;
+	border: 1px solid black;
+	margin-top: -4%;
+	border-radius: 10px;
+}
+.newsImage{width: 100%}
+#floatDx{float: right}
+.news{
+	margin:auto;
+	margin-top: 2%;
+	width: 95%; 
+}
+.footer{
+	background-color: #f0f0f0;
+	width: 60%;
+	margin: auto;
+	border: 1px solid;
+	margin-top: 1% !important; 
+	margin-bottom: 1% !important; 
+	border-radius: 10px;
+}
+.textVerticalCenter{transform: translate(7px, 7px)}
+.logo{
+	height: 70px !important;
+}
+.logoDx{
+	float: right;  
+}
+.voci{
+	border-right: 1px solid;
+}
+.centerVoci{
+	margin: auto;
+}
+.txt{
+	font-style: italic; font-size: 30px;
+}
+.btn{
+	background-color: #9BBCE6;
+	border: 1px solid black;
+	border-radius: 5px;	 
+	margin-top: 2%;
+	padding: 1%;
+	margin-left: 1%;
+	cursor: pointer;
+	transition: 0.5s;
+}
+.btn:hover{
+	background-color: #6B98D1;
+}
+.game{
+	margin-top: 10% !important;
+	width: 95%;
+	margin: auto;
+}
+.g{
+	width: 2.5%;
+}
+input:focus{
+	outline: none;
+}
