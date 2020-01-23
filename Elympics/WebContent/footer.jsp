@@ -4,7 +4,9 @@
 <div align="center" class="foot">
 	Astir Academy <br>
 	© Creator Andrea Mazza, Alberto Lorena, Davide Gentile, Filippo Caselli
-	<button onclick="topFunction()" id="btnTop" title="Go to top">Top</button>
+	<button onclick="topFunction()" id="btnTop" title="Go to top"><svg class="bi bi-chevron-up" width="1.5em" height="1.5em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M9.646 6.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L10 7.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg></button>
 </div>
 
 <script>

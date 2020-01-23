@@ -49,12 +49,12 @@
 				<td align="center">22</td>
 			</tr>
 			<tr>
-				<th scope="row">High Score</th>
-				<td align="center">10000</td>
-				<td align="center">9000</td>
-				<td align="center">7000</td>
-				<td align="center">7000</td>
-				<td align="center">7000</td>
+				<th scope="row"></th>
+				<td align="center"></td>
+				<td align="center"></td>
+				<td align="center"></td>
+				<td align="center"></td>
+				<td align="center"></td>
 			</tr>
 		</tbody>
 	</table>
@@ -63,24 +63,24 @@
 	<table class="table table-bordered table-striped shadow p-3 mb-5 mt-4 bg-white rounded" >
 		<thead class="bg-primary" style="color: white">
 			<tr align="center">
-				<th scope="col"></th>
-				<th scope="col" >Snake</th>
-				<th scope="col" >Pac-Man</th>
-				<th scope="col" >Solitario</th>
+				<th scope="col">State</th>
+				<th scope="col" >Player</th>
+				<th scope="col" >Game</th>
+				<th scope="col" >Score</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<th scope="row">Best Player</th>
+				<th scope="row">Italy</th>
 				<td align="center">Batman</td>
-				<td align="center">Capitàn Spain</td>
-				<td align="center">Wonder Woman</td>
+				<td align="center">Snake</td>
+				<td align="center">10000</td>
 			</tr>
 			<tr>
-				<th scope="row">High Score</th>
-				<td align="center">10000</td>
-				<td align="center">9000</td>
-				<td align="center">7000</td>
+				<th scope="row"></th>
+				<td align="center"></td>
+				<td align="center"></td>
+				<td align="center"></td>
 			</tr>
 		</tbody>
 	</table>
