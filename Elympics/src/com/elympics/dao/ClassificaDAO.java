@@ -9,7 +9,7 @@ import com.elympics.bean.User;
 
 
 public class ClassificaDAO {
-
+	/* Classe della lista */
 	public List<Classifica> getListClassifica(){
 		List<Classifica> lista = new ArrayList <Classifica>();
 		for ( int i=0; i<=10; i++){

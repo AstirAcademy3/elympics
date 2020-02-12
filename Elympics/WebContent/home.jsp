@@ -91,7 +91,7 @@
  <img src="img/solitario.jpg"  align="right" height="10%" width="15%" style="margin-left:1em;"><div align="justify">The most clicked classic Spider-style solitaire game on the web, to have fun simply and for free. The objective of the Spider solitaire is to eliminate the cards that are found in the game table together with those present in the deck, composing the typical scales in descending order, that is, starting from the King and reaching the Ace.The most clicked classic Spider-style solitaire game on the web, to have fun simply and for free. The objective of the Spider solitaire is to eliminate the cards that are found in the game table together with those present in the deck, composing the typical scales in descending order, that is, starting from the King and reaching the Ace. 
 </div></div>
 </div>
-
+<!-- Include il footer -->
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
