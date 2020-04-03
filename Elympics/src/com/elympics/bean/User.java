@@ -1,64 +1,146 @@
 package com.elympics.bean;
 import java.util.Date;
 
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Proxy;
+
+@Entity
+@Table(name="utente")
+@Proxy(lazy=false)
 public class User {
-
+	private int id;
 	private String username;
-	private String password;
 	private String nome;
 	private String cognome;
-	private String indirizzo;
 	private String mail;
-	private String telefono;
-	private Date eliminazione; 
-	
-	
-	public void setEliminazione(Date eliminazione) {
-		this.eliminazione = eliminazione;
+	private String password;
+	private String paese;
+	private Date creazione; 
+	private Date eliminazione;
+	private boolean isAmm;
+	private Set<Partita> partite;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column()
+	public int getId() {
+		return id;
 	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	@Column()
 	public String getUsername() {
 		return username;
 	}
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	@Column()
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	@Column()
 	public String getCognome() {
 		return cognome;
 	}
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
-	public String getIndirizzo() {
-		return indirizzo;
-	}
-	public void setIndirizzo(String indirizzo) {
-		this.indirizzo = indirizzo;
-	}
+	@Column(name="email")
 	public String getMail() {
 		return mail;
 	}
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
-	public String getTelefono() {
-		return telefono;
+	@Column(name="pass")
+	public String getPassword() {
+		return password;
 	}
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	} 
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	@Column()
+	public String getPaese() {
+		return paese;
+	}
+	public void setPaese(String paese) {
+		this.paese = paese;
+	}
+	@Column(name="data_inserimento")
+	public Date getCreazione() {
+		return creazione;
+	}
+	public void setCreazione(Date creazione) {
+		this.creazione = creazione;
+	}
+	@Column(name="data_eliminazione")
+	public Date getEliminazione() {
+		return eliminazione;
+	}
+	public void setEliminazione(Date eliminazione) {
+		this.eliminazione = eliminazione;
+	}
+	@Column(name="isamm")
+	public boolean isAmm() {
+		return isAmm;
+	}
+	public void setAmm(boolean isAmm) {
+		this.isAmm = isAmm;
+	}
+	@OneToMany(fetch=FetchType.LAZY, orphanRemoval=true, cascade=CascadeType.ALL)
+	@JoinColumn(name="utente_id")
+	public Set<Partita> getPartite(){
+		return partite;
+	}
+	
+	public void setPartite(Set<Partita> partita) {
+		this.partite = partita;
+	}
+	
+	
+	public User() {
+		super();
+	}
+	public User(int id, String username, String nome, String cognome, String mail, String password, String paese,
+			Date creazione, Date eliminazione, boolean isAmm, Set<Partita> partite) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.nome = nome;
+		this.cognome = cognome;
+		this.mail = mail;
+		this.password = password;
+		this.paese = paese;
+		this.creazione = creazione;
+		this.eliminazione = eliminazione;
+		this.isAmm = isAmm;
+		this.partite = partite;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", nome=" + nome + ", cognome=" + cognome + ", mail="
+				+ mail + ", password=" + password + ", paese=" + paese + ", creazione=" + creazione + ", eliminazione="
+				+ eliminazione + ", isAmm=" + isAmm + "]";
+	}
+
 	
 	
 }

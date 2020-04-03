@@ -13,5 +13,3 @@ import com.google.common.collect.Lists;
 
 public class UserManager {
 	}
-
-
