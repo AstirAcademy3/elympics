@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@ page import="com.elympics.bean.*" %>
     <%@ page import="com.elympics.manager.UserManager" %>
-    <%@ page import="com.elympics.dao.ClassificaDAO" %>
+
     <%@ page import="java.util.List" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
     <%@ taglib uri="http://displaytag.sf.net" prefix="display"%>
@@ -18,10 +18,6 @@
 
 <c:if test="${user.username != null }">
 
-<%UserManager manager = new UserManager();
-List<Classifica> lista = manager.getListaPrimiTre(user);
-request.setAttribute("lista",lista);
-%>
 
 <display:table name="lista" class="tabella">
     <display:column property="user.cognome" title="Cognome"/>
