@@ -105,7 +105,7 @@ public class User {
 	public void setAmm(boolean isAmm) {
 		this.isAmm = isAmm;
 	}
-	@OneToMany(fetch=FetchType.EAGER, orphanRemoval=true, cascade=CascadeType.ALL)
+	@OneToMany(fetch=FetchType.LAZY, orphanRemoval=true, cascade=CascadeType.ALL)
 	@JoinColumn(name="utente_id")
 	public Set<Partita> getPartite(){
 		return partite;

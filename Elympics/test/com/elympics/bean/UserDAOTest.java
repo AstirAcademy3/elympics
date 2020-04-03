@@ -13,6 +13,8 @@ public class UserDAOTest {
 		User u= getUserTest();
 		try {
 			dao.AddUser(u);
+			User user= dao.getByUsername(u.getUsername());
+			dao.DeleteUser(user);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
