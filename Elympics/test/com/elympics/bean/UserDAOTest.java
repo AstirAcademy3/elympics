@@ -12,9 +12,17 @@ public class UserDAOTest {
 		UserDAO dao= new UserHBDAO();
 		User u= getUserTest();
 		try {
-			dao.AddUser(u);
+			dao.crea(u);
+			User u2=dao.login(u.getUsername(), u.getPassword()+1);
+			if(u2==null) {
+				System.out.println("test ok: utente o password errati "+u.getPassword()+1);
+			}
+			User u3=dao.login(u.getUsername(), u.getPassword());
+			if(u3!=null) {
+				System.out.println("test ok: login e password corrette "+u.getPassword());
+			}
 			User user= dao.getByUsername(u.getUsername());
-			dao.DeleteUser(user);
+			dao.delete(user);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -23,7 +31,6 @@ public class UserDAOTest {
 	private static User getUserTest() {
 		User user = new User();
 		Date data = new Date(System.currentTimeMillis());
-		  System.out.println("inserire username :");
 		  user.setUsername("username");
 		  user.setNome("nome");
 		  user.setCognome("cognome");

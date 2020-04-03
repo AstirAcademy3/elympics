@@ -14,13 +14,35 @@ import com.elympics.util.HibernateUtil;
 public class UserHBDAO implements UserDAO{
 
 	@Override
-	public boolean CheckUser(User user) throws Exception {
-		
-		return false;
+	public User login(String username, String password) throws Exception {
+    	User result=null;
+    	Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = null;
+		try {
+			tx = session.beginTransaction();
+			Query<User> q = session.createQuery("from User where username=:utente and password=:password",User.class);
+			q.setParameter("utente", username);
+			q.setParameter("password", password);
+			List<User>l = q.list();
+			if(l.size()>0) {
+				result=l.get(0);
+			}
+
+			tx.commit();
+		}
+		catch (HibernateException he) {
+			if (tx!=null) 
+				tx.rollback();
+			throw he;
+		}
+		finally {
+			session.close();
+		}
+    	return result;
 	}
 
 	@Override
-	public void AddUser(User user) throws Exception {
+	public void crea(User user) throws Exception {
 			Session session = HibernateUtil.getSessionFactory().openSession();
 			Transaction tx = null;
 			try {
@@ -39,7 +61,7 @@ public class UserHBDAO implements UserDAO{
 	}
 
 	@Override
-	public void DeleteUser(User user) throws Exception {
+	public void delete(User user) throws Exception {
 			Session session = HibernateUtil.getSessionFactory().openSession();
 			Transaction tx = null;
 			try {
