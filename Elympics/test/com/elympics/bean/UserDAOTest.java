@@ -21,6 +21,10 @@ public class UserDAOTest {
 			if(u3!=null) {
 				System.out.println("test ok: login e password corrette "+u.getPassword());
 			}
+			User u4 =u;
+			u4.setCognome("cognome modificatp");
+			dao.modifica(u4);
+			System.out.println(u4.getCognome());
 			User user= dao.getByUsername(u.getUsername());
 			dao.delete(user);
 		} catch (Exception e) {

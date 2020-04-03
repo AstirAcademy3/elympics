@@ -11,4 +11,5 @@ public interface UserDAO {
 	public void crea(User user) throws Exception ;
 	public void delete(User user) throws Exception ;
 	public User getByUsername(String username) throws Exception ;
+	public void modifica(User user) throws Exception ;
 }

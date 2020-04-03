@@ -1,6 +1,9 @@
 package com.elympics.dao;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -47,6 +50,7 @@ public class UserHBDAO implements UserDAO{
 			Transaction tx = null;
 			try {
 				tx = session.beginTransaction();
+				user.setCreazione(new Date());
 				session.persist(user);
 				tx.commit();
 			}
@@ -101,6 +105,28 @@ public class UserHBDAO implements UserDAO{
 			session.close();
 		}
 		return result;
+	}
+
+	@Override
+	public void modifica(User user) throws Exception {
+		
+		BufferedReader reader =  new BufferedReader(new InputStreamReader(System.in));
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = null;
+		try {
+			tx = session.beginTransaction();
+			session.saveOrUpdate(user);
+			tx.commit();
+		}
+		catch (HibernateException he) {
+			if (tx!=null) 
+				tx.rollback();
+			throw he;
+		}
+		finally {
+			session.close();
+		}
+		
 	}
 
 }
