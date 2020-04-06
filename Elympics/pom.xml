@@ -14,7 +14,6 @@
 
     <!-- Hibernate -->
 
-    	<!-- Hibernate -->
 
     <dependency>
 		<groupId>org.hibernate</groupId>
@@ -40,7 +39,7 @@
   </dependencies>
   
     
-  </dependencies>
+
 
   <build>
     <sourceDirectory>src</sourceDirectory>
