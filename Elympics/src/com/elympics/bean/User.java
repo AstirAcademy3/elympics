@@ -20,7 +20,7 @@ import org.hibernate.annotations.Proxy;
 @Entity
 @Table(name="utente")
 @Proxy(lazy=false)
-public class User {
+public class User implements BeanDO{
 	private int id;
 	private String username;
 	private String nome;
