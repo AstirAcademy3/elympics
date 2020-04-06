@@ -49,6 +49,12 @@ public class UserManager {
 			return risultato;
 		}else {
 			return classifica;
-		}
+		}		
+	}
+	public List<RigaClassifica> getClassificaCompleta(Gioco gioco){
+		PartitaDAO dao = new PartitaHBDAO();
+		List<RigaClassifica> classifica = dao.getClassifica(gioco);
+		Collections.sort(classifica);
+		return classifica;
 	}
 }

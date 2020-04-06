@@ -14,7 +14,12 @@ public class UserManagerTest {
 		List<RigaClassifica> classifica = manager.getListaPrimiTre(u, g);
 		for(RigaClassifica riga: classifica) {
 			System.out.println(riga);
+			
 		}
-		
+		List<RigaClassifica> classifica2 = manager.getClassificaCompleta(g);
+		for(RigaClassifica riga: classifica2) {
+			System.out.println(riga);
+			
+		}
 	}
 }

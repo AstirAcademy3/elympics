@@ -17,7 +17,6 @@ public class PartitaDAOTest {
 		try {
 			dao.crea(p);
 		//Partita u= getPartitaTest();
-		try {
 			//dao.AddPartita(u);
 			List<Partita> partita= dao.getAll();
 			Gioco gioco = new Gioco();
@@ -37,19 +36,6 @@ public class PartitaDAOTest {
 			gioco.setId(4);
 			List<RigaClassifica> classifica3= dao.getClassifica(gioco);
 			System.out.println( (classifica3.size()>0) ? classifica3.size() : "non ce ne sono!" );		
-			System.out.println( (classifica.size()>0) ? classifica.get(0) : "non ce ne sono!" );
-			
-			gioco.setId(2);
-			List<RigaClassifica> classifica1= dao.getClassifica(gioco);
-			System.out.println( (classifica1.size()>0) ? classifica1.get(0) : "non ce ne sono!" );
-			
-			gioco.setId(3);
-			List<RigaClassifica> classifica2= dao.getClassifica(gioco);
-			System.out.println( (classifica2.size()>0) ? classifica2.get(0) : "non ce ne sono!" );
-
-			gioco.setId(4);
-			List<RigaClassifica> classifica3= dao.getClassifica(gioco);
-			System.out.println( (classifica3.size()>0) ? classifica3.get(0) : "non ce ne sono!" );		
 			
 			gioco.setId(5);
 			List<RigaClassifica> classifica4= dao.getClassifica(gioco);
@@ -66,8 +52,8 @@ public class PartitaDAOTest {
 		Gioco g = new Gioco();
 		g.setId((int) Math.round(Math.random()*4+1));
 		p.setGioco(g);
-		p.setPunteggio((int) Math.round(Math.random()*7+1));
-		p.setUtente((int) Math.round(Math.random()*4));
+		p.setPunteggio((int) Math.round(Math.random()*1000));
+		p.setUtente((int) Math.round(Math.random()*7+1));
 		p.setTempo(new Date());
 		return p;
 	}
