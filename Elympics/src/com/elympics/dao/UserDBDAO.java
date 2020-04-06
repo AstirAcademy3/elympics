@@ -28,4 +28,10 @@ public class UserDBDAO implements UserDAO{
 		String sql="UPDATE data_eliminazione=NOW() on utente where username='"+user.getUsername()+"';";
 	}
 
+	@Override
+	public User getByUsername(String username) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

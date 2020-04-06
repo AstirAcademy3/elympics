@@ -14,7 +14,7 @@ import org.hibernate.annotations.Proxy;
 @Entity
 @Table(name="partita")
 @Proxy(lazy=false)
-public class Partita {
+public class Partita implements BeanDO {
 	private int id;
 	private Date tempo;
 	private int punteggio;

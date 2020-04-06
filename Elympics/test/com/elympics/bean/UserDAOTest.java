@@ -9,7 +9,7 @@ import com.elympics.dao.UserHBDAO;
 
 public class UserDAOTest {
 	public static void main(String[] args) {
-		UserDAO dao= new UserHBDAO();
+		UserHBDAO dao= new UserHBDAO();
 		User u= getUserTest();
 		try {
 			dao.crea(u);

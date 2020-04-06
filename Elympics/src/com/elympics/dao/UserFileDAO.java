@@ -63,4 +63,10 @@ public class UserFileDAO implements UserDAO{
 		
 		
 	}
+
+	@Override
+	public User getByUsername(String username) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

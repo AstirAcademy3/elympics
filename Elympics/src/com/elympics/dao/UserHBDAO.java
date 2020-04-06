@@ -14,7 +14,7 @@ import org.hibernate.query.Query;
 import com.elympics.bean.User;
 import com.elympics.util.HibernateUtil;
 //implementa hibernate
-public class UserHBDAO implements UserDAO{
+public class UserHBDAO extends HBDAO implements UserDAO{
 
 	@Override
 	public User login(String username, String password) throws Exception {
@@ -46,42 +46,13 @@ public class UserHBDAO implements UserDAO{
 
 	@Override
 	public void crea(User user) throws Exception {
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			Transaction tx = null;
-			try {
-				tx = session.beginTransaction();
-				user.setCreazione(new Date());
-				session.persist(user);
-				tx.commit();
-			}
-			catch (HibernateException he) {
-				if (tx!=null) 
-					tx.rollback();
-				throw he;
-			}
-			finally {
-				session.close();
-			}		
+		user.setCreazione(new Date());
+		super.crea(user);
 	}
 
 	@Override
 	public void delete(User user) throws Exception {
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			Transaction tx = null;
-			try {
-				tx = session.beginTransaction();
-				session.delete(user);
-				tx.commit();
-			}
-			catch (HibernateException he) {
-				if (tx!=null) 
-					tx.rollback();
-				throw he;
-			}
-			finally {
-				session.close();
-			}
-		
+		super.delete(user);
 	}
 
 	@Override
@@ -109,24 +80,7 @@ public class UserHBDAO implements UserDAO{
 
 	@Override
 	public void modifica(User user) throws Exception {
-		
-		BufferedReader reader =  new BufferedReader(new InputStreamReader(System.in));
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Transaction tx = null;
-		try {
-			tx = session.beginTransaction();
-			session.saveOrUpdate(user);
-			tx.commit();
-		}
-		catch (HibernateException he) {
-			if (tx!=null) 
-				tx.rollback();
-			throw he;
-		}
-		finally {
-			session.close();
-		}
-		
+		super.modifica(user);
 	}
 
 }

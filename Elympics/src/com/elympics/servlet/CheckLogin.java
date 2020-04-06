@@ -27,18 +27,18 @@ public class CheckLogin extends HttpServlet
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		User user = new User();
-	    user.setUsername(request.getParameter("username"));
-	    user.setPassword(request.getParameter("password"));
-		UserDAO u = new UserDBDAO();
-		Boolean check=false;
+	    
+		String username=request.getParameter("username");
+		String password=request.getParameter("password");
+		UserDAO dao = new UserHBDAO();
+		User user=null;
 		try {
-			check = u.CheckUser(user);
+			user = dao.login(username, password);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(check==true){
+		if(user!=null){
 			request.getSession().setAttribute("User", user);
 			System.out.println("accesso garantito");
 			response.sendRedirect("home.jsp");
