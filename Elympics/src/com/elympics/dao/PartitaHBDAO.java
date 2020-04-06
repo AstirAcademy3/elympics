@@ -1,5 +1,6 @@
 package com.elympics.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -7,11 +8,13 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import com.elympics.bean.Gioco;
 import com.elympics.bean.Partita;
+import com.elympics.bean.RigaClassifica;
 import com.elympics.bean.User;
 import com.elympics.util.HibernateUtil;
 
-public class PartitaHBDAO implements PartitaDAO  {
+public class PartitaHBDAO extends HBDAO implements PartitaDAO  {
 	@Override
 	public List <Partita> getAll() throws Exception {
 		List <Partita> result=null;
@@ -33,12 +36,38 @@ public class PartitaHBDAO implements PartitaDAO  {
 		}
 		return result;
 	}
-	public void AddPartita(Partita id) throws Exception {
+	public void crea(Partita partita) throws Exception {
+		super.crea(partita);
+}
+	final List <RigaClassifica> result=new ArrayList<RigaClassifica>();;
+
+	public List <RigaClassifica> getClassifica(Gioco gioco) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
-			session.persist(id);
+			
+			
+			String sql = "select utente_id, max(punteggio), gioco_id from partita where gioco_id = " + gioco.getId();	
+			Query q = session.createSQLQuery(sql);
+			//q.setParameter(":gioco", gioco.getId());
+			result.clear();
+			List<Object[]> dati = q.list();
+			
+			if(dati != null && dati.size()>0) {
+				dati.stream().forEach(
+
+					 
+
+					    (x) -> {
+					            Integer utente = (Integer) x[0];
+					            Integer punteggio = (Integer) x[1];
+					            Integer gioco_id = (Integer) x[2];
+					            if(utente!= null && punteggio != null && gioco_id != null)
+					            	result.add(new RigaClassifica(utente, punteggio, gioco_id));
+					    }
+					);
+			}
 			tx.commit();
 		}
 		catch (HibernateException he) {
@@ -48,6 +77,7 @@ public class PartitaHBDAO implements PartitaDAO  {
 		}
 		finally {
 			session.close();
-		}		
-}
+		}
+		return result;
+	}
 }
