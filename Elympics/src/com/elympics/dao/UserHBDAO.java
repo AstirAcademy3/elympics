@@ -82,5 +82,15 @@ public class UserHBDAO extends HBDAO implements UserDAO{
 	public void modifica(User user) throws Exception {
 		super.modifica(user);
 	}
+	
+	public void modificaBlocco(User user) throws Exception{
+		if(user.isBloccato()==true) {
+			user.setBloccato(false);
+		}else {
+			user.setBloccato(true);
+		}
+		super.modifica(user);
+
+	}
 
 }

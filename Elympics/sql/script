@@ -23,3 +23,6 @@ CREATE TABLE partita (
     FOREIGN KEY (gioco_id) REFERENCES gioco(id),
     FOREIGN KEY (utente_id) REFERENCES utente(id)
 );
+
+ALTER TABLE utente
+ADD bloccato tinyint default 0;

@@ -26,6 +26,7 @@ public class UserDAOTest {
 			dao.modifica(u4);
 			System.out.println(u4.getCognome());
 			User user= dao.getByUsername(u.getUsername());
+			dao.modificaBlocco(user);
 			dao.delete(user);
 		} catch (Exception e) {
 			e.printStackTrace();
