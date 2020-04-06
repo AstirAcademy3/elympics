@@ -37,6 +37,6 @@ private int gioco;
 @Override
 public int compareTo(RigaClassifica o) {
 	// TODO Auto-generated method stub
-	return this.punteggio-o.punteggio;
+	return o.punteggio-this.punteggio;
 }
 }

@@ -66,7 +66,7 @@ public class PartitaHBDAO extends HBDAO implements PartitaDAO  {
 					            Integer punteggio = (Integer) x[1];
 					            Integer gioco_id = (Integer) x[2];
 					            if(utente!= null && punteggio != null && gioco_id != null)
-					            	result.add(new RigaClassifica(utente, punteggio, gioco_id));
+					            	result.add(new RigaClassifica(utente, gioco_id, punteggio));
 					    }
 					);
 			}

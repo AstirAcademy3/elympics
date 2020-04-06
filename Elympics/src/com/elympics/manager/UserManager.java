@@ -40,6 +40,12 @@ public class UserManager {
 			risultato.add(classifica.get(0));
 			risultato.add(classifica.get(1));
 			risultato.add(classifica.get(2));
+			for(int i = 3; i<classifica.size(); i++) {
+				if(user.getId()==classifica.get(i).getUtente()) {
+					risultato.add(classifica.get(i));
+					return risultato;
+				}
+			}
 			return risultato;
 		}else {
 			return classifica;
