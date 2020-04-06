@@ -31,6 +31,7 @@ public class User implements BeanDO{
 	private Date creazione; 
 	private Date eliminazione;
 	private boolean isAmm;
+	private boolean bloccato;
 	private Set<Partita> partite;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -114,12 +115,25 @@ public class User implements BeanDO{
 		this.partite = partita;
 	}
 	
-	
+	@Column(name="bloccato")
+	public boolean isBloccato() {
+		return bloccato;
+	}
+	public void setBloccato(boolean bloccato) {
+		this.bloccato = bloccato;
+	}
 	public User() {
 		super();
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", nome=" + nome + ", cognome=" + cognome + ", mail="
+				+ mail + ", password=" + password + ", paese=" + paese + ", creazione=" + creazione + ", eliminazione="
+				+ eliminazione + ", isAmm=" + isAmm + "]";
+	}
 	public User(int id, String username, String nome, String cognome, String mail, String password, String paese,
-			Date creazione, Date eliminazione, boolean isAmm, Set<Partita> partite) {
+			Date creazione, Date eliminazione, boolean isAmm, boolean bloccato, Set<Partita> partite) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -131,14 +145,8 @@ public class User implements BeanDO{
 		this.creazione = creazione;
 		this.eliminazione = eliminazione;
 		this.isAmm = isAmm;
+		this.bloccato = bloccato;
 		this.partite = partite;
-	}
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", nome=" + nome + ", cognome=" + cognome + ", mail="
-				+ mail + ", password=" + password + ", paese=" + paese + ", creazione=" + creazione + ", eliminazione="
-				+ eliminazione + ", isAmm=" + isAmm + "]";
 	}
 
 	

@@ -14,7 +14,6 @@ import com.elympics.dao.UserHBDAO;
 //import com.google.common.collect.Lists;
 
 
-
 public class UserManager {
 	
 	public void cancellaIscrizione(User user) throws Exception {
@@ -22,13 +21,11 @@ public class UserManager {
 		user.setEliminazione(new Date());
 		dao.modifica(user);
 	}
-	
 	public RigaClassifica getPrimoClassificato(Gioco gioco) {
 		PartitaDAO dao = new PartitaHBDAO();
 		List<RigaClassifica> result = dao.getClassifica(gioco);
 		return (result != null && result.size()>0)? result.get(0) : null;
 	}
-	
 	public List<RigaClassifica> getListaClassifica(Gioco gioco){
 		PartitaDAO dao = new PartitaHBDAO();
 		return dao.getClassifica(gioco);

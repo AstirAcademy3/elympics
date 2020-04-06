@@ -49,6 +49,8 @@ public class PartitaHBDAO extends HBDAO implements PartitaDAO  {
 			
 			
 			String sql = "select utente_id, max(punteggio), gioco_id from partita where gioco_id = " + gioco.getId() + " group by utente_id";	
+
+
 			Query q = session.createSQLQuery(sql);
 			//q.setParameter(":gioco", gioco.getId());
 			result.clear();
