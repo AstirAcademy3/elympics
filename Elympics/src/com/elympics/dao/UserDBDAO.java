@@ -15,7 +15,7 @@ public class UserDBDAO implements UserDAO{
 	}
 
 	@Override
-	public void AddUser(User user) throws Exception {
+	public void crea(User user) throws Exception {
 		String sql="INSERT INTO utente(username, nome, cognome, email, pass, paese, data_inserimento, data_eliminazione)" + 
 					" values ('"
 					+user.getUsername()+"',"
@@ -24,7 +24,7 @@ public class UserDBDAO implements UserDAO{
 	}
 
 	@Override
-	public void DeleteUser(User user) throws Exception {
+	public void delete(User user) throws Exception {
 		String sql="UPDATE data_eliminazione=NOW() on utente where username='"+user.getUsername()+"';";
 	}
 
