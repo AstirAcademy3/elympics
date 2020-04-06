@@ -38,9 +38,6 @@
     
 
   </dependencies>
-  
-    
-  </dependencies>
 
   <build>
     <sourceDirectory>src</sourceDirectory>
