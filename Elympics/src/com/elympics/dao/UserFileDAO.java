@@ -45,7 +45,7 @@ public class UserFileDAO implements UserDAO{
 	}
 	//FUNZIONE REGISTRAZIONE UTENTE
 	@Override
-	public void AddUser(User user) throws Exception {
+	public void crea(User user) throws Exception {
 		Boolean check= CheckUser(user);
 		if(check==false) {
 			BufferedWriter outputWriter = null;
@@ -59,7 +59,7 @@ public class UserFileDAO implements UserDAO{
 		}
 
 	@Override
-	public void DeleteUser(User user) throws Exception {
+	public void delete(User user) throws Exception {
 		
 		
 	}

@@ -1,0 +1,25 @@
+CREATE TABLE gioco (
+    id int primary key AUTO_INCREMENT,
+    nome varchar(50)
+);
+create table utente(
+	id int primary key AUTO_INCREMENT,
+    username varchar(50) unique,
+    nome varchar(50),
+    cognome varchar(50),
+    email varchar(50) unique,
+    pass varchar(50),
+    paese varchar(50),
+    data_inserimento date,
+    data_eliminazione date,
+    isamm tinyint
+);
+CREATE TABLE partita (
+    id int primary key AUTO_INCREMENT,
+    tempo datetime,
+    punteggio int,
+    gioco_id int,
+    utente_id int,
+    FOREIGN KEY (gioco_id) REFERENCES gioco(id),
+    FOREIGN KEY (utente_id) REFERENCES utente(id)
+);
