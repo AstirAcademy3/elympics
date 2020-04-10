@@ -29,7 +29,7 @@ public class UserFileDAO implements UserDAO{
 	}
 	
 	//FUNZIONE CONTROLLO LOGIN
-	@Override
+	/*@Override
 
 	public boolean CheckUser(User user) throws Exception {
 		boolean check=false;
@@ -42,9 +42,9 @@ public class UserFileDAO implements UserDAO{
 	    	  }
 	      }
 		return check;
-	}
+	}*/
 	//FUNZIONE REGISTRAZIONE UTENTE
-	@Override
+	/*@Override
 	public void crea(User user) throws Exception {
 		Boolean check= CheckUser(user);
 		if(check==false) {
@@ -56,7 +56,7 @@ public class UserFileDAO implements UserDAO{
 			  outputWriter.flush();  
 			  outputWriter.close();  
 		}
-		}
+		}*/
 
 	@Override
 	public void delete(User user) throws Exception {
@@ -68,5 +68,23 @@ public class UserFileDAO implements UserDAO{
 	public User getByUsername(String username) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public User login(String username, String password) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void modifica(User user) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void crea(User user) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 }

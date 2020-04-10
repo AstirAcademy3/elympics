@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style><%@include file="style.css" %></style>
-	<style><%@include file="bootstrapLib/css/bootstrap.min.css" %></style>
-	<style><%@include file="bootstrapLib/js/bootstrap.min.js" %></style>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="js/bootstrap.min.js"></script>
+	
 <meta charset="ISO-8859-1">
 <title>Ranking</title>
 </head>

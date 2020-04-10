@@ -6,13 +6,13 @@ import com.elympics.bean.User;
 
 public class UserDBDAO implements UserDAO{
 
-	@Override
+/*	@Override
 	public boolean CheckUser(User user) throws Exception {
 		String sql=" select username, '1' as esito"
 				  +" from utente"
 				  +" where username='"+user.getUsername()+"' and pass='"+user.getPassword()+"'";
 		return false;
-	}
+	}*/
 
 	@Override
 	public void crea(User user) throws Exception {
@@ -32,6 +32,18 @@ public class UserDBDAO implements UserDAO{
 	public User getByUsername(String username) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public User login(String username, String password) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void modifica(User user) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
