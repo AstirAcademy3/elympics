@@ -4,44 +4,123 @@
   <artifactId>Elympics</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <dependencies>
+  <!-- <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
-    </dependency>
+    </dependency> -->
 
     <!-- Hibernate -->
 
-
-    <dependency>
+    <!-- <dependency>
 		<groupId>org.hibernate</groupId>
 		<artifactId>hibernate-core</artifactId>
 		<version>5.4.12.Final</version>
-	</dependency>
+	</dependency>-->
 	
 	<!-- mySql -->
-	<dependency>
+	<!-- <dependency>
 		<groupId>mysql</groupId>
 		<artifactId>mysql-connector-java</artifactId>
 		<version>8.0.19</version>
-	</dependency>
+	</dependency> -->
 	
 	<!-- log4j2 -->
-	<dependency>
+	<!-- <dependency>
 		<groupId>org.apache.logging.log4j</groupId>
 		<artifactId>log4j-core</artifactId>
 		<version>2.13.1</version>
-	</dependency>
+	</dependency>-->
     
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+<!-- <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>5.1.1.RELEASE</version>
+</dependency>-->
 
-  </dependencies>
+    <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+<!-- <dependency>  
+    <groupId>javax.servlet</groupId>  
+    <artifactId>servlet-api</artifactId>  
+    <version>3.0-alpha-1</version>  
+</dependency> -->
 
-  
-    
 
+<!-- Hibernate / JPA -->
+<!-- <dependency>
+<groupId>org.hibernate.javax.persistence</groupId>
+<artifactId>hibernate-jpa-2.0-api</artifactId>
+<version>1.0.1.Final</version>
+</dependency>-->
 
+<!-- <groupId>org.hibernate</groupId> <artifactId>hibernate-entitymanager</artifactId>
+<version>3.2.1.ga</version> -->
+
+<!-- <dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-entitymanager</artifactId>
+    <version>5.4.14.Final</version>
+</dependency>
+
+  </dependencies>-->
+
+<properties>
+    <spring.version>5.1.5.RELEASE</spring.version>
+    <hibernate.version>5.4.1.Final</hibernate.version>
+</properties>
+<dependencies>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>${spring.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>${spring.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-orm</artifactId>
+    <version>${spring.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework.data</groupId>
+    <artifactId>spring-data-jpa</artifactId>
+    <version>2.1.5.RELEASE</version>
+</dependency>
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>${hibernate.version}</version>
+</dependency>
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.14</version>
+    <scope>runtime</scope>
+</dependency>
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.1.0</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>javax.servlet.jsp</groupId>
+    <artifactId>javax.servlet.jsp-api</artifactId>
+    <version>2.3.1</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>jstl</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+</dependencies>
 
 
   <build>

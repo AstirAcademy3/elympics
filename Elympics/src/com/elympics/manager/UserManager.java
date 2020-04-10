@@ -57,4 +57,9 @@ public class UserManager {
 		Collections.sort(classifica);
 		return classifica;
 	}
+	public User login(String username, String password) throws Exception {
+		UserDAO dao= new UserHBDAO();
+		
+		return dao.login(username, password);
+	}
 }
