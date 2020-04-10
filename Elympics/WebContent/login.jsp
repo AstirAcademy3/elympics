@@ -10,7 +10,7 @@
 		<title>Login form</title>
 		<script>
 			function myFunction() {
-			  var x = document.getElementById("pass");
+			  var x = document.getElementById("password");
 			  if (x.type === "password") {
 			    x.type = "text";
 			    document.getElementById('imgEye').src='img/eyeT2.jpg';
@@ -25,17 +25,17 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-	<form method="GET" action="check_login">
+	<form method="GET" action="login">
 		<div class="log">
 			<div class="form-group">
 				<label for="exampleInputEmail1">Username</label>
-				<input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				<input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username">
 				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 			</div>
 			<div class="form-group">
 				<label for="exampleInputPassword1">Password</label>
 				<div class="row" class="passToggle">
-					<div class="inputTogglePass col-md-11"><input class="form-control" type="password" name="pass" id="pass"></div>
+					<div class="inputTogglePass col-md-11"><input class="form-control" type="password" name="password" id="pass"></div>
 					<div class="imgTogglePass col-sd-1"><img src="img/eyeT.jpg" style="width:100%;" onclick="myFunction()" id="imgEye"/></div>
 				</div>
 			</div>
