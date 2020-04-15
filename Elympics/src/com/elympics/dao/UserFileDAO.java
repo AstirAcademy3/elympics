@@ -87,4 +87,10 @@ public class UserFileDAO implements UserDAO{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public User get(int utente) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
