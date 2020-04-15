@@ -10,7 +10,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.elympics.bean.User;
-import com.elympics.bean.UserTest;;
 
 
 public class UserFileDAO implements UserDAO{
@@ -30,7 +29,7 @@ public class UserFileDAO implements UserDAO{
 	}
 	
 	//FUNZIONE CONTROLLO LOGIN
-	@Override
+	/*@Override
 
 	public boolean CheckUser(User user) throws Exception {
 		boolean check=false;
@@ -43,10 +42,10 @@ public class UserFileDAO implements UserDAO{
 	    	  }
 	      }
 		return check;
-	}
+	}*/
 	//FUNZIONE REGISTRAZIONE UTENTE
-	@Override
-	public void AddUser(User user) throws Exception {
+	/*@Override
+	public void crea(User user) throws Exception {
 		Boolean check= CheckUser(user);
 		if(check==false) {
 			BufferedWriter outputWriter = null;
@@ -57,11 +56,35 @@ public class UserFileDAO implements UserDAO{
 			  outputWriter.flush();  
 			  outputWriter.close();  
 		}
-		}
+		}*/
 
 	@Override
-	public void DeleteUser(User user) throws Exception {
+	public void delete(User user) throws Exception {
 		
+		
+	}
+
+	@Override
+	public User getByUsername(String username) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User login(String username, String password) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void modifica(User user) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void crea(User user) throws Exception {
+		// TODO Auto-generated method stub
 		
 	}
 }

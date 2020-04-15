@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style><%@include file="style.css" %></style>
-	<style><%@include file="bootstrapLib/css/bootstrap.min.css" %></style>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
 	<meta charset="ISO-8859-1">
 	<title>Elympics|Home</title>
 </head>
