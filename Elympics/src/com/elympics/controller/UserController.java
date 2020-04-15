@@ -1,4 +1,6 @@
 package com.elympics.controller;
+import java.util.Date;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,5 +43,47 @@ public class UserController {
 	public String index()
 	{
 		return "login";
+	}
+	@RequestMapping("/registrazione")
+	//read the provided form data
+	public String registrazione()
+	{
+		return "registrati";
+	}
+	@RequestMapping("/registra")
+	//read the provided form data
+	public String creazione(@RequestParam("nome") String nome,@RequestParam("cognome") String cognome,
+			@RequestParam("username") String username,@RequestParam("password") String password,
+			@RequestParam("email") String email,Model m)
+	{
+		Date data = new Date();
+		UserManager manager = new UserManager();
+		User user = new User();
+		user.setNome(nome);
+		user.setCognome(cognome);
+		user.setCreazione(data);
+		user.setUsername(username);
+		user.setPassword(password);
+		user.setMail(email);
+		try {
+			 manager.crea(user);
+		} catch (Exception e) {
+			e.printStackTrace();
+			m.addAttribute("message", e.getMessage());
+			return "errorpage";
+		}
+		if(user!=null)
+		{
+			String msg="Hello "+ user.getNome() + " " + user.getCognome();
+			//add a message to the model
+			m.addAttribute("message", msg);
+			return "viewpage";
+		}
+		else
+		{
+			String msg="Sorry some fileds that you insert are wrong";
+			m.addAttribute("message", msg);
+			return "errorpage";
+		}	
 	}
 }

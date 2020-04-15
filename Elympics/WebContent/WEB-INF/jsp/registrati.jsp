@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style><%@include file="style.css" %></style>
-	<style><%@include file="bootstrapLib/css/bootstrap.min.css" %></style>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
@@ -14,33 +14,33 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<form class="sub">
+	<form class="sub" method="POST" action="registra">
 	  <div class="form-row">
 	  	<div class="form-group col-md-6">
 			<label for="exampleInputPassword1">Nome</label>
-			<input class="form-control" type="text" name="pass" id="pass">
+			<input class="form-control" type="text" name="nome" id="nome">
 		</div>
 		<div class="form-group col-md-6">
 			<label for="exampleInputPassword1">Cognome</label>
-			<input class="form-control" type="text" name="pass" id="pass">
+			<input class="form-control" type="text" name="cognome" id="cognome">
 		</div>
 	    <div class="form-group col-md-6">
 	      <label for="inputEmail4">Email</label>
-	      <input type="email" class="form-control" id="inputEmail4">
+	      <input type="email" class="form-control" name="email" id="email">
 	    </div>
 	    <div class="form-group col-md-6">
-	      <label for="inputPassword4">Password</label>
-	      <input type="password" class="form-control" id="inputPassword4">
+	      <label for="inputPassword4">Username</label>
+	      <input type="text" class="form-control" name="username" id="username">
 	    </div>
 	  </div>
 	  <div class="form-row">
 	  	<div class="col-md-6">
 			<label for="exampleInputPassword1">Password</label>
-			<input class="form-control" type="password" name="pass" id="pass">
+			<input class="form-control" type="password" name="password" id="password">
 		</div>
 		<div class="col-md-6">
 			<label for="exampleInputPassword1">Conferma Password</label>
-			<input class="form-control" type="password" name="pass" id="pass">
+			<input class="form-control" type="password" name="confirm-password" id="conf_password">
 		</div>
 	  </div>
 	  <div class="form-row">
@@ -89,6 +89,6 @@
 	  </div>
 	  <button type="submit" class="btn btn-primary" style="width: 38.5rem">Suscribe</button>
 	</form>
-	<jsp:include page="footerLogReg.jsp"></jsp:include>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
