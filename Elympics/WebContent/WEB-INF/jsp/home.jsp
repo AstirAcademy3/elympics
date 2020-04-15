@@ -63,19 +63,19 @@
 		</thead>
 		<tbody>
 		<tr>
-				<td  align="center">Snake</td>
-				<td align="center">Batman</td>
-				<td align="center">10000</td>
+				<td  align="center">${primaRiga.gioco.nome}</td>
+				<td align="center">${primaRiga.user.username}</td>
+				<td align="center">${primaRiga.punti}</td>
 			</tr>
 			<tr>
-				<td  align="center">Pac-Man</td>
-				<td align="center">Capitan Spain</td>
-				<td align="center">9000</td>
+				<td  align="center">${secondaRiga.gioco.nome}</td>
+				<td align="center">${secondaRiga.user.username}</td>
+				<td align="center">${secondaRiga.punti}</td>
 			</tr>
 			<tr>
-				<td  align="center">Solitaire</td>
-				<td align="center">Wonder Woman</td>
-				<td align="center">7000</td>
+				<td  align="center">${terzaRiga.gioco.nome}</td>
+				<td align="center">${terzaRiga.user.username}</td>
+				<td align="center">${terzaRiga.punti}</td>
 			</tr>
 		</tbody>
 	</table>

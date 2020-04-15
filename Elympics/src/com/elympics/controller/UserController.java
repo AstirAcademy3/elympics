@@ -10,5 +10,36 @@ import com.elympics.manager.UserManager;
 @Controller
 public class UserController {
 
-
-}
+	@RequestMapping("/login")
+	//read the provided form data
+	public String display(@RequestParam("username") String username,@RequestParam("password") String password,Model m)
+	{
+		UserManager manager= new UserManager();
+		User utente;
+		try {
+			utente = manager.login(username,password);
+		} catch (Exception e) {
+			m.addAttribute("message", e.getMessage());
+			return "registrati";
+		}
+		if(utente!= null)
+		{
+			String msg="Hello "+ utente.getNome();
+			//add a message to the model
+			m.addAttribute("message", msg);
+			return "home";
+		}
+		else
+		{
+			String msg="Credenziali errate";
+			m.addAttribute("message", msg);
+			return "registrati";
+		}	
+	}
+	@RequestMapping("/index")
+	//read the provided form data
+	public String index()
+	{
+		return "login";
+	}
+}	

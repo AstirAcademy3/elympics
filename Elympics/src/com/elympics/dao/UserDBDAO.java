@@ -46,4 +46,10 @@ public class UserDBDAO implements UserDAO{
 		
 	}
 
+	@Override
+	public User get(int utente) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

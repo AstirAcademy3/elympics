@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.elympics.bean.BeanDO;
+import com.elympics.bean.Gioco;
 import com.elympics.bean.User;
 import com.elympics.util.HibernateUtil;
 
@@ -63,6 +64,25 @@ public class HBDAO {
 		finally {
 			session.close();
 		}
+		}
 		
+		public BeanDO get(Class c, Integer id){
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			Transaction tx = null;
+			BeanDO result = null;
+			try {
+				tx = session.beginTransaction();
+				result = (BeanDO) session.get(c, id);
+				tx.commit();
+			}
+			catch (HibernateException he) {
+				if (tx!=null) 
+					tx.rollback();
+				throw he;
+			}
+			finally {
+				session.close();
+			}
+			return result; 
 	}
 }
