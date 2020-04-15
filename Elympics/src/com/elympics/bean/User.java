@@ -16,10 +16,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Proxy;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 @Entity
 @Table(name="utente")
 @Proxy(lazy=false)
+@Component
+@Scope("session")
 public class User implements BeanDO{
 	private int id;
 	private String username;
