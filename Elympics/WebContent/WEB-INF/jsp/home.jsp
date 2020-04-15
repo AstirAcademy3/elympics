@@ -77,6 +77,11 @@
 				<td align="center">${terzaRiga.user.username}</td>
 				<td align="center">${terzaRiga.punti}</td>
 			</tr>
+			<tr>
+				<td  align="center">${quartaRiga.gioco.nome}</td>
+				<td align="center">${quartaRiga.user.username}</td>
+				<td align="center">${quartaRiga.punti}</td>
+			</tr>
 		</tbody>
 	</table>
 	&nbsp

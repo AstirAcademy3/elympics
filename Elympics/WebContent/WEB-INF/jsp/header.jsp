@@ -29,17 +29,17 @@
 				<ul class="navbar-nav nav text-center"> 
 
 					<li class="nav-item active">
-						<a class="nav-link" href="home.jsp">HOME<span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="home">HOME<span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="games">GAMES</a>
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" href="rank.jsp">RANK</a>
+						<a class="nav-link" href="rank">RANK</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="aboutus.jsp">ABOUT US</a>
+						<a class="nav-link" href="aboutus">ABOUT US</a>
 					</li>
 
 				</ul>

@@ -61,6 +61,9 @@
 	</table>
 &nbsp
 <h3 class="font-italic med" align="center">Best Country's Player</h3>
+
+${classificaPaese}
+
 	<table class="table table-bordered table-striped shadow p-3 mb-5 mt-4 bg-white rounded" >
 		<thead class="bg-primary" style="color: white">
 			<tr align="center">

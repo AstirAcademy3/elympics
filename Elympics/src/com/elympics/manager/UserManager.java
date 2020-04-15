@@ -66,4 +66,29 @@ public class UserManager {
 		UserDAO dao= new UserHBDAO();
 		dao.crea(user);
 	}
+	public List<RigaClassifica> getListaPrimiTrePerPaese(User user, Gioco gioco){
+		PartitaDAO dao = new PartitaHBDAO();
+		List<RigaClassifica> classifica = dao.getClassificaPerPaese(user, gioco);
+		Collections.sort(classifica);
+		List<RigaClassifica> risultato = new ArrayList<RigaClassifica>();
+		if(classifica!=null && classifica.size() > 3) {
+			risultato.add(classifica.get(0));
+			risultato.add(classifica.get(1));
+			risultato.add(classifica.get(2));
+			for(int i = 3; i<classifica.size(); i++) {
+				if(user.getId()==classifica.get(i).getUtente()) {
+					risultato.add(classifica.get(i));
+					return risultato;
+				}
+			}
+			return risultato;
+		}else {
+			return classifica;
+		}		
+	}
+	public RigaClassifica getPrimoClassificatoPerPaese(User user, Gioco gioco) {
+		PartitaDAO dao = new PartitaHBDAO();
+		List<RigaClassifica> result = dao.getClassificaPerPaese(user, gioco);
+		return (result != null && result.size()>0)? result.get(0) : null;
+	}
 }

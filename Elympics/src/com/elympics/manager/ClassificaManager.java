@@ -7,6 +7,7 @@ import java.util.List;
 import com.elympics.bean.Gioco;
 import com.elympics.bean.RigaClassifica;
 import com.elympics.bean.RigaClassificaVO;
+import com.elympics.bean.RigaMedagliereVO;
 import com.elympics.bean.User;
 import com.elympics.dao.GiocoDAO;
 import com.elympics.dao.GiocoHBDAO;
@@ -68,4 +69,20 @@ public class ClassificaManager {
 			return classifica;
 		}		
 	}
+	/*
+	public List<RigaMedagliereVO> getMedagliere(List<RigaClassifica> classifica) {
+		//ritorna una lista di RigaMedagliereVO
+		//per ogni gioco : 
+			//prelevo i primi 3 classificati	
+			//per ogni classificato :
+				//leggo il paese e incremento il numero di medaglie
+		//id dell'utente è 1: 
+		List<RigaMedagliereVO> medagliere;
+        User u = classifica.get(0);
+        String paese = u.getPaese(); // "Italia"
+        RigaMedagliereVO mr = null; 
+        
+        return medagliere;
+	}
+	*/
 }
