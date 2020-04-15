@@ -30,14 +30,18 @@ public class GamesController {
 		RigaClassificaVO r = manager.getPrimoClassificatoVO(gioco);
 		m.addAttribute("primaRiga", r);
 		//seconda riga 
-		gioco.setId(3);
+		gioco.setId(2);
 		RigaClassificaVO r2 = manager.getPrimoClassificatoVO(gioco);
 		m.addAttribute("secondaRiga", r2);
 		//terza riga 
-		gioco.setId(4);
+		gioco.setId(3);
 		RigaClassificaVO r3 = manager.getPrimoClassificatoVO(gioco);
 		m.addAttribute("terzaRiga", r3);
-			return "home";
+		//quarta riga 
+		gioco.setId(4);
+		RigaClassificaVO r4 = manager.getPrimoClassificatoVO(gioco);
+		m.addAttribute("terzaRiga", r4);
+		return "home";
 	}	
 }
 
