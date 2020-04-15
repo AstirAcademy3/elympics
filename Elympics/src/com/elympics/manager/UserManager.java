@@ -62,4 +62,8 @@ public class UserManager {
 		
 		return dao.login(username, password);
 	}
+	public void crea(User user) throws Exception {
+		UserDAO dao= new UserHBDAO();
+		dao.crea(user);
+	}
 }
