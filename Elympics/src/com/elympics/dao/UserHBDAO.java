@@ -94,4 +94,10 @@ public class UserHBDAO extends HBDAO implements UserDAO{
 
 	}
 
+	@Override
+	public User get(int id) {
+		
+		return (User) super.get(User.class, id);
+	}
+
 }

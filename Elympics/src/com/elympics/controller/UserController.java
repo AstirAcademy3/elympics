@@ -14,27 +14,32 @@ public class UserController {
 	//read the provided form data
 	public String display(@RequestParam("username") String username,@RequestParam("password") String password,Model m)
 	{
-		UserManager manager = new UserManager();
-		User user = null;
+		UserManager manager= new UserManager();
+		User utente;
 		try {
-			user = manager.login(username, password);
+			utente = manager.login(username,password);
 		} catch (Exception e) {
-			e.printStackTrace();
 			m.addAttribute("message", e.getMessage());
-			return "errorpage";
+			return "registrati";
 		}
-		if(user!=null)
+		if(utente!= null)
 		{
-			String msg="Hello "+ user.getNome() + " " + user.getCognome();
+			String msg="Hello "+ utente.getNome();
 			//add a message to the model
 			m.addAttribute("message", msg);
-			return "viewpage";
+			return "home";
 		}
 		else
 		{
-			String msg="Sorry "+ username +". You entered an incorrect password or username";
+			String msg="Credenziali errate";
 			m.addAttribute("message", msg);
-			return "errorpage";
+			return "registrati";
 		}	
+	}
+	@RequestMapping("/index")
+	//read the provided form data
+	public String index()
+	{
+		return "login";
 	}
 }

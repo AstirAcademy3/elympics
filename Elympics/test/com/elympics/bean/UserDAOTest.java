@@ -12,6 +12,8 @@ public class UserDAOTest {
 		UserHBDAO dao= new UserHBDAO();
 		User u= getUserTest();
 		try {
+			User u0 = dao.get(1);
+			System.out.println(u0);
 			dao.crea(u);
 			User u2=dao.login(u.getUsername(), u.getPassword()+1);
 			if(u2==null) {
