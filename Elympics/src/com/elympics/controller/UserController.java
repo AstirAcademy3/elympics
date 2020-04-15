@@ -1,5 +1,6 @@
 package com.elympics.controller;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.elympics.bean.Gioco;
 import com.elympics.bean.RigaClassifica;
+import com.elympics.bean.RigaMedagliereVO;
 import com.elympics.bean.User;
+import com.elympics.manager.ClassificaManager;
 import com.elympics.manager.UserManager;
 
 @Controller
@@ -69,6 +72,12 @@ public class UserController {
 	//read the provided form data
 	public String rank(HttpSession session, Model m)
 	{
+		
+
+		ClassificaManager cManager=new ClassificaManager();
+		Collection<RigaMedagliereVO> medagliere = cManager.getMedagliere();
+		m.addAttribute("medagliere", medagliere);
+		
 		
 		User u= (User) session.getAttribute("user");
 		UserManager manager = new UserManager();
