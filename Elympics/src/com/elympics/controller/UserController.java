@@ -50,6 +50,19 @@ public class UserController {
 	{
 		return "registrati";
 	}
+	@RequestMapping("/aboutus")
+	//read the provided form data
+	public String aboutus()
+	{
+		return "aboutus";
+	}
+	@RequestMapping("/rank")
+	//read the provided form data
+	public String rank()
+	{
+		return "rank";
+	}
+
 	@RequestMapping("/registra")
 	//read the provided form data
 	public String creazione(@RequestParam("nome") String nome,@RequestParam("cognome") String cognome,
