@@ -15,4 +15,6 @@ public interface PartitaDAO {
 	public void crea(Partita partita) throws Exception;
 
 	public List<RigaClassifica> getClassificaPerPaese(User user, Gioco gioco);
+	
+	public void delete(Partita partita) throws Exception;
 }

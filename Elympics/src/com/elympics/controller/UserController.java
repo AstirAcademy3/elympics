@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.elympics.bean.Gioco;
 import com.elympics.bean.RigaClassifica;
+import com.elympics.bean.RigaClassificaVO;
 import com.elympics.bean.RigaMedagliereVO;
 import com.elympics.bean.User;
 import com.elympics.manager.ClassificaManager;
@@ -80,16 +81,20 @@ public class UserController {
 		
 		
 		User u= (User) session.getAttribute("user");
-		UserManager manager = new UserManager();
-		Gioco gioco = new Gioco();
-		List<RigaClassifica> lrc = new ArrayList<RigaClassifica>();
-		for(int i=1; i<=4; i++) {
-		gioco.setId(i);
-		RigaClassifica rc=	manager.getPrimoClassificatoPerPaese(u, gioco);
-		lrc.add(rc);
+		if(u!=null) {
+			UserManager manager = new UserManager();
+			Gioco gioco = new Gioco();
+			List<RigaClassificaVO> lrc = new ArrayList<RigaClassificaVO>();
+			for(int i=1; i<=4; i++) {
+			gioco.setId(i);
+			RigaClassificaVO rc=manager.getPrimoClassificatoPerPaese(u, gioco);
+			lrc.add(rc);
+			}
+			m.addAttribute("classificaPaese", lrc);
+			return "rank";
+		}else {
+			return"home";
 		}
-		m.addAttribute("classificaPaese", lrc);
-		return "rank";
 	}
 
 	@RequestMapping("/registra")
@@ -119,7 +124,7 @@ public class UserController {
 			String msg="Hello "+ user.getNome() + " " + user.getCognome();
 			//add a message to the model
 			m.addAttribute("message", msg);
-			return "viewpage";
+			return "login";
 		}
 		else
 		{

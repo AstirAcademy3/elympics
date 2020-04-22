@@ -15,8 +15,9 @@ public class PartitaDAOTest {
 		PartitaDAO dao= new PartitaHBDAO();
 		Partita p= getPartitaTest();
 		try {
+			dao.delete(p);
 			dao.crea(p);
-		//Partita u= getPartitaTest();
+		    //Partita u= getPartitaTest();
 			//dao.AddPartita(u);
 			List<Partita> partita= dao.getAll();
 			Gioco gioco = new Gioco();
@@ -41,7 +42,12 @@ public class PartitaDAOTest {
 			List<RigaClassifica> classifica4= dao.getClassifica(gioco);
 			System.out.println( (classifica4.size()>0) ? classifica4.get(0) : "non ce ne sono!" );
 
-			//dao.DeletePartita(Partita);
+			gioco.setId(1);
+			List<RigaClassifica> classificaPerPaese = dao.getClassificaPerPaese(getUserTest(), gioco);
+			for(RigaClassifica rc: classificaPerPaese) {
+				System.out.println("Riga per paese :" + rc);
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -57,7 +63,7 @@ public class PartitaDAOTest {
 		p.setTempo(new Date());
 		return p;
 	}
-	/*private static Partita getUserTest() {
+	private static User getUserTest() {
 		User user = new User();
 		Date data = new Date(System.currentTimeMillis());
 		  System.out.println("inserire username :");
@@ -68,9 +74,12 @@ public class PartitaDAOTest {
 		  user.setPassword("password");
 		  user.setPaese("paese");			  
 		  user.setCreazione(data);
+		  user.setId(1);
 		  return user;
 	}
-	*/
+	
+	
+	
 	}
 
 
