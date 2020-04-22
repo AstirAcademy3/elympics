@@ -47,11 +47,24 @@ public class UserController {
 			return "registrati";
 		}	
 	}
-	@RequestMapping("/index")
+	@RequestMapping("/home")
+	//read the provided form data
+	public String home()
+	{
+		return "home";
+	}
+	@RequestMapping("/")
 	//read the provided form data
 	public String index()
 	{
-		return "login";
+		return "home";
+	}
+	@RequestMapping("/logout")
+	//read the provided form data
+	public String logout(HttpSession session)
+	{
+		session.invalidate();
+		return "home";
 	}
 	@RequestMapping("/registrazione")
 	//read the provided form data
