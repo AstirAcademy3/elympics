@@ -138,7 +138,7 @@ public class UserController {
 			String msg="Hello "+ user.getNome() + " " + user.getCognome();
 			//add a message to the model
 			m.addAttribute("message", msg);
-			return "viewpage";
+			return "login";
 		}
 		else
 		{
