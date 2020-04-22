@@ -29,6 +29,9 @@ public class RigaMedagliereVO {
 	public void setMedBro(int medBro) {
 		this.medBro = medBro;
 	}
+	public void incrementaOro() {
+		this.medOro++;
+	}
 	public RigaMedagliereVO(String paese, int medOro, int medArg, int medBro) {
 		super();
 		this.paese = paese;
@@ -38,6 +41,19 @@ public class RigaMedagliereVO {
 	}
 	public RigaMedagliereVO() {
 		super();
+	}
+	public void incrementaArgento() {
+		this.medArg++;
+		
+	}
+	public void incrementaBronzo() {
+		this.medBro++;
+		
+	}
+	@Override
+	public String toString() {
+		return "RigaMedagliereVO [paese=" + paese + ", medOro=" + medOro + ", medArg=" + medArg + ", medBro=" + medBro
+				+ "]";
 	}
 	
 }

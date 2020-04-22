@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.List;
 
 import com.elympics.bean.*;
+import com.elympics.dao.GiocoDAO;
+import com.elympics.dao.GiocoHBDAO;
 import com.elympics.dao.PartitaDAO;
 import com.elympics.dao.PartitaHBDAO;
 import com.elympics.dao.UserDAO;
@@ -86,9 +88,20 @@ public class UserManager {
 			return classifica;
 		}		
 	}
-	public RigaClassifica getPrimoClassificatoPerPaese(User user, Gioco gioco) {
+	public RigaClassificaVO getPrimoClassificatoPerPaese(User user, Gioco gioco) {
 		PartitaDAO dao = new PartitaHBDAO();
 		List<RigaClassifica> result = dao.getClassificaPerPaese(user, gioco);
-		return (result != null && result.size()>0)? result.get(0) : null;
+		RigaClassifica riga=(result != null && result.size()>0)? result.get(0):null;
+		if(riga!=null) {
+			RigaClassificaVO rigaVO = new RigaClassificaVO();
+			rigaVO.setPunti(riga.getPunteggio());
+			rigaVO.setUser(user);
+			GiocoDAO daoGioco= new GiocoHBDAO();
+			Gioco g = daoGioco.get(riga.getGioco());
+			rigaVO.setGioco(g);
+			return rigaVO;
+		}else {
+			return null;
+		}
 	}
 }

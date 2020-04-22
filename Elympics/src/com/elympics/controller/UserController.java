@@ -1,5 +1,6 @@
 package com.elympics.controller;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.elympics.bean.Gioco;
 import com.elympics.bean.RigaClassifica;
+import com.elympics.bean.RigaClassificaVO;
+import com.elympics.bean.RigaMedagliereVO;
 import com.elympics.bean.User;
+import com.elympics.manager.ClassificaManager;
 import com.elympics.manager.UserManager;
 
 @Controller
@@ -83,17 +87,27 @@ public class UserController {
 	public String rank(HttpSession session, Model m)
 	{
 		
+
+		ClassificaManager cManager=new ClassificaManager();
+		Collection<RigaMedagliereVO> medagliere = cManager.getMedagliere();
+		m.addAttribute("medagliere", medagliere);
+		
+		
 		User u= (User) session.getAttribute("user");
-		UserManager manager = new UserManager();
-		Gioco gioco = new Gioco();
-		List<RigaClassifica> lrc = new ArrayList<RigaClassifica>();
-		for(int i=1; i<=4; i++) {
-		gioco.setId(i);
-		RigaClassifica rc=	manager.getPrimoClassificatoPerPaese(u, gioco);
-		lrc.add(rc);
+		if(u!=null) {
+			UserManager manager = new UserManager();
+			Gioco gioco = new Gioco();
+			List<RigaClassificaVO> lrc = new ArrayList<RigaClassificaVO>();
+			for(int i=1; i<=4; i++) {
+			gioco.setId(i);
+			RigaClassificaVO rc=manager.getPrimoClassificatoPerPaese(u, gioco);
+			lrc.add(rc);
+			}
+			m.addAttribute("classificaPaese", lrc);
+			return "rank";
+		}else {
+			return"home";
 		}
-		m.addAttribute("classificaPaese", lrc);
-		return "rank";
 	}
 
 	@RequestMapping("/registra")

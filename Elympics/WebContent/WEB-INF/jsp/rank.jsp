@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,28 +42,22 @@
 			</tr>
 		</thead>
 		<tbody>
+		<c:forEach items = "${medagliere}"  var="rm">
 			<tr>
-				<th scope="row">Italy</th>
-				<td align="center">5</td>
-				<td align="center">3</td>
-				<td align="center">1</td>
-				<td align="center">9</td>
-				<td align="center">22</td>
+				<th scope="row">${rm.paese}</th>
+				<td align="center">${rm.medOro}</td>
+				<td align="center"> ${rm.medArg}</td>
+				<td align="center">${rm.medBro}</td>
+				<td align="center">${rm.medBro+rm.medOro+rm.medArg}</td>
+				<td align="center">${rm.medOro*3+rm.medArg*2+rm.medBro}</td>
 			</tr>
-			<tr>
-				<th scope="row"></th>
-				<td align="center"></td>
-				<td align="center"></td>
-				<td align="center"></td>
-				<td align="center"></td>
-				<td align="center"></td>
-			</tr>
+	</c:forEach>
 		</tbody>
 	</table>
 &nbsp
 <h3 class="font-italic med" align="center">Best Country's Player</h3>
 
-${classificaPaese}
+
 
 	<table class="table table-bordered table-striped shadow p-3 mb-5 mt-4 bg-white rounded" >
 		<thead class="bg-primary" style="color: white">
@@ -74,18 +69,14 @@ ${classificaPaese}
 			</tr>
 		</thead>
 		<tbody>
+		<c:forEach items = "${classificaPaese}"  var="rc">
 			<tr>
-				<th scope="row">Italy</th>
-				<td align="center">Batman</td>
-				<td align="center">Snake</td>
-				<td align="center">10000</td>
+				<th scope="row">${user.paese}</th>
+				<td align="center">${user.username}</td>
+				<td align="center">${rc.gioco.nome}</td>
+				<td align="center">${rc.punti}</td>
 			</tr>
-			<tr>
-				<th scope="row"></th>
-				<td align="center"></td>
-				<td align="center"></td>
-				<td align="center"></td>
-			</tr>
+			</c:forEach>
 		</tbody>
 	</table>
 	<jsp:include page="footer.jsp"></jsp:include>

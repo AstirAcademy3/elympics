@@ -1,8 +1,11 @@
 package com.elympics.manager;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.elympics.bean.Gioco;
 import com.elympics.bean.RigaClassifica;
@@ -58,10 +61,12 @@ public class ClassificaManager {
 			risultato.add(classifica.get(0));
 			risultato.add(classifica.get(1));
 			risultato.add(classifica.get(2));
-			for(int i = 3; i<classifica.size(); i++) {
-				if(user.getId()==classifica.get(i).getUtente()) {
-					risultato.add(classifica.get(i));
-					return risultato;
+			if(user!=null) {
+				for(int i = 3; i<classifica.size(); i++) {
+					if(user.getId()==classifica.get(i).getUtente()) {
+						risultato.add(classifica.get(i));
+						return risultato;
+					}
 				}
 			}
 			return risultato;
@@ -69,20 +74,38 @@ public class ClassificaManager {
 			return classifica;
 		}		
 	}
-	/*
-	public List<RigaMedagliereVO> getMedagliere(List<RigaClassifica> classifica) {
-		//ritorna una lista di RigaMedagliereVO
-		//per ogni gioco : 
-			//prelevo i primi 3 classificati	
-			//per ogni classificato :
-				//leggo il paese e incremento il numero di medaglie
-		//id dell'utente è 1: 
-		List<RigaMedagliereVO> medagliere;
-        User u = classifica.get(0);
-        String paese = u.getPaese(); // "Italia"
-        RigaMedagliereVO mr = null; 
-        
-        return medagliere;
+
+	public Collection<RigaMedagliereVO> getMedagliere() {
+		Map<String,RigaMedagliereVO> medagliere= new HashMap<String,RigaMedagliereVO>();
+		
+			for(int i=1;i<=4;i++) {
+				GiocoDAO giocoDao = new GiocoHBDAO();
+				Gioco g = giocoDao.get(i);
+				RigaMedagliereVO riga=null;
+				List<RigaClassifica> classifica= this.getListaPrimiTre(null,g);
+				
+				
+				
+				UserDAO userDao = new UserHBDAO();
+				for(int j=0;j<classifica.size();j++){
+					
+				
+					User u = userDao.get(classifica.get(j).getUtente());
+					
+			       if (medagliere.get(u.getPaese())==null) {
+			        	riga = new RigaMedagliereVO();
+			        	riga.setPaese(u.getPaese());
+			            medagliere.put(u.getPaese(),riga);
+			        }
+				
+		    	   riga = medagliere.get(u.getPaese());
+		    	   switch (j) {
+		    		   case 0:riga.incrementaOro(); break;
+		    		   case 1:riga.incrementaArgento();break;
+		    		   case 2:riga.incrementaBronzo();break;
+		    	   }
+				}	
+		}
+	        return medagliere.values();
 	}
-	*/
 }
