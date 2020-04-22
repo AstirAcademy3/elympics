@@ -51,8 +51,8 @@
   </a>
   ${ user.nome }
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item dd" href="login.jsp">LOGIN</a>
-    <a class="dropdown-item dd" href="registrati.jsp">SUBSCRIBE</a>
+    <a class="dropdown-item dd" href="prelogin">LOGIN</a>
+    <a class="dropdown-item dd" href="registrazione">SUBSCRIBE</a>
   </div>
 </div>	
 

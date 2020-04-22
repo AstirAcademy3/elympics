@@ -24,6 +24,13 @@ import com.elympics.manager.UserManager;
 @Scope("session")
 public class UserController {
 
+	@RequestMapping("/")
+	//read the provided form data
+	public String index()
+	{
+		System.out.println("Passaggio dalla index");
+		return "home";
+	}
 	@RequestMapping("/login")
 	//read the provided form data
 	public String display(@RequestParam("username") String username,@RequestParam("password") String password,Model m, HttpSession session)
@@ -51,18 +58,6 @@ public class UserController {
 			return "registrati";
 		}	
 	}
-	@RequestMapping("/home")
-	//read the provided form data
-	public String home()
-	{
-		return "home";
-	}
-	@RequestMapping("/")
-	//read the provided form data
-	public String index()
-	{
-		return "home";
-	}
 	@RequestMapping("/logout")
 	//read the provided form data
 	public String logout(HttpSession session)
@@ -75,6 +70,12 @@ public class UserController {
 	public String registrazione()
 	{
 		return "registrati";
+	}
+	@RequestMapping("/prelogin")
+	//read the provided form data
+	public String prelogin()
+	{
+		return "login";
 	}
 	@RequestMapping("/aboutus")
 	//read the provided form data
