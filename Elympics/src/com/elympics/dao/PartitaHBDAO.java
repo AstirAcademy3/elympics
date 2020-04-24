@@ -36,9 +36,15 @@ public class PartitaHBDAO extends HBDAO implements PartitaDAO  {
 		}
 		return result;
 	}
+	
 	public void crea(Partita partita) throws Exception {
 		super.crea(partita);
-}
+	}
+	
+	public void delete(Partita partita) throws Exception {
+		super.delete(partita);
+    }
+	
 	final List <RigaClassifica> result=new ArrayList<RigaClassifica>();;
 
 	public List <RigaClassifica> getClassifica(Gioco gioco) {

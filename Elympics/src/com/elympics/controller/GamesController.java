@@ -15,8 +15,7 @@ public class GamesController {
 	@RequestMapping("/games")
 	public String games()
 	{
-		
-			return "games";
+		return "games";
 	}	
 	
 	@RequestMapping("/home")
