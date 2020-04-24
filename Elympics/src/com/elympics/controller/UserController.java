@@ -147,4 +147,9 @@ public class UserController {
 			return "errorpage";
 		}	
 	}
+	@RequestMapping("/gioco2")
+	   public String gioco1() {
+			System.out.println("sono entrato nel controller di gioco1");
+	      return "g1";
+	   }
 }

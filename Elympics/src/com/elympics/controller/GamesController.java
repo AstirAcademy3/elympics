@@ -1,5 +1,7 @@
 package com.elympics.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,6 +43,12 @@ public class GamesController {
 		RigaClassificaVO r4 = manager.getPrimoClassificatoVO(gioco);
 		m.addAttribute("terzaRiga", r4);
 		return "home";
+	}	
+	@RequestMapping("/salvaPartita")
+	public String salvaPartita(HttpSession session)
+	{
+		
+			return "games";
 	}	
 }
 
