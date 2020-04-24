@@ -7,7 +7,10 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-${message}
-
+<div align="center" >
+<h1>Errore</h1>
+<p>Sono stati immessi campi sbagliati</p>
+</div>
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

@@ -237,9 +237,11 @@
 		<p id="posizioneOmino"></p>
 		<p id="messaggioDebug"></p>
 		
+
 		<form method="POST" action="salvapartita">
-		<input type="hidden" value="1" name="gioco"></input>
-		<input type ="text" value="50"></input>
+		<input type ="hidden" name="punteggio" id="punteggio" value="" ></input>
+		<input type ="hidden" name="gioco" id="gioco" value="1" ></input>
+
 		<input type="submit"  value="Salva" class="btn"></input>
 		</form>
 	</div>
