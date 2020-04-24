@@ -36,6 +36,7 @@ function controllaCella(x,y){
 		case PILLOLA:
 			energia = energia + DELTA_ENERGIA;
 			document.getElementById("energia").innerHTML=energia;
+			document.getElementById("punteggio").value=energia;
 			piano[x][y] = SFONDO;
 			countPillole--;
 			if (countPillole==0){
