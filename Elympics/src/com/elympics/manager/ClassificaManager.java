@@ -3,11 +3,13 @@ package com.elympics.manager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.elympics.bean.Gioco;
+import com.elympics.bean.Partita;
 import com.elympics.bean.RigaClassifica;
 import com.elympics.bean.RigaClassificaVO;
 import com.elympics.bean.RigaMedagliereVO;
@@ -107,5 +109,20 @@ public class ClassificaManager {
 				}	
 		}
 	        return medagliere.values();
+	}
+	
+	public void salvaPartita(User user, int giocoID, int punteggio) throws Exception {
+		PartitaDAO dao = new PartitaHBDAO();
+		Partita partita = new Partita();
+		partita.setUtente(user.getId());
+		Gioco g = new Gioco();
+		g.setId(giocoID);
+		partita.setGioco(g);
+		partita.setPunteggio(punteggio);
+		Date data = new Date();
+		partita.setTempo(data);
+	    
+		dao.crea(partita);
+		
 	}
 }

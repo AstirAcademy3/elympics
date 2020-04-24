@@ -153,8 +153,8 @@ public class UserController {
 			System.out.println("sono entrato nel controller di gioco1");
 	      return "g1";
 	   }
-	@GetMapping("/gioco/{id}")
-	public String getUser(@PathVariable("id") String id){
+	@GetMapping("/gioco")
+	public String getUser(@RequestParam("id") String id){
 
 		return "g"+id;
 	}

@@ -9,7 +9,7 @@ var armaY = 9;
 // valore iniziale dell'energia
 var energia =0;
 
-// costanti e parametri per la configurazione del gioco
+// costanti e parametri per la configurazioen del gioco
 var PILLOLA = 1;
 var DELTA_ENERGIA = 20;
 var OSTACOLO=3; 
@@ -19,7 +19,7 @@ var ARMA=2;
 var omino = "omino";
 var ominoConSpada = "ominoConSpada";
 
-var pathImg = "gioco1/gioco3/img1/";
+var pathImg = "gioco3/img1/";
 
 // dichiarazione variabili di lavoro
 var i=0;
@@ -30,6 +30,7 @@ var countPillole = 0;
 var R = 10; 
 var C = 20; 
 
+var timer;
 // definizione id matrice, come array di array
 var piano = new Array();
 
@@ -44,7 +45,42 @@ for (var i=0; i<R; i++) {
 piano[4][4] = OSTACOLO;
 piano[armaX][armaY] = ARMA;
 
+function mostraMatriceHTML(){
+	var s = "";
+
+	for (var i=0; i<R; i++) {
+		for (var j=0; j<C;j++){
+			s = s + piano[i][j] + " " ;
+		}
+		s = s + "<br>";
+	}
+	document.getElementById("messaggioDebug").innerHTML=s; 
+}
+
+function azzerraPiano(){
+		for (var i=0; i<R; i++) {
+		piano[i]=new Array();  // ogni riga contiene un array: si ha così una matrice
+		for (var j=0; j<C;j++){
+			piano[i][j]=SFONDO; // si assegna un valore di default a tutte le celle
+		}
+	}	
+}
+
+function init(){
+	
+	azzerraPiano();
+	disegnaPiano();
+	
+}
+
 function disegnaPiano(){
+	timer=setInterval ("clessidra()", 1000);
+	for (var i=0; i<R; i++) {
+		piano[i]=new Array();  // ogni riga contiene un array: si ha così una matrice
+		for (var j=0; j<C;j++){
+			piano[i][j]=SFONDO; // si assegna un valore di default a tutte le celle
+		}
+	}
 	for (var i=0; i<R; i++){
 		for (var j=0; j<C;j++){
 			disegnaCella(i,j);
@@ -75,7 +111,9 @@ function generaOggetto(valOggetto){
 	// utilizzando rx e rc si ha una posizione casuale nel piano di gioco
 	piano[rx][ry] = valOggetto; //posiziona oggetto nella matrice
 	// in rx, ry c'è un nuovo valore quindi meglio ridisegnare la cella
-	disegnaCella(rx,ry);	
+	disegnaCella(rx,ry);
+	
+	
 }
 
 function disegnaCella(i,j){
@@ -90,4 +128,9 @@ function disegnaCellaSpeciale(i,j,valore) {
 	console.log(id + " " + src);
 	document.getElementById(id).src=src;
 	
+} 
+
+function disegnaOmino() {
+	disegnaCellaSpeciale(ominoX,ominoY,omino);
+	document.getElementById("posizioneOmino").innerHTML=" coordinate omino: Omino(" + ominoX + "," + ominoY + ")"; 
 }
