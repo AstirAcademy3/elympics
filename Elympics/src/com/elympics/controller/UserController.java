@@ -89,12 +89,9 @@ public class UserController {
 	//read the provided form data
 	public String rank(HttpSession session, Model m)
 	{
-		
-
 		ClassificaManager cManager=new ClassificaManager();
 		Collection<RigaMedagliereVO> medagliere = cManager.getMedagliere();
 		m.addAttribute("medagliere", medagliere);
-		
 		
 		User u= (User) session.getAttribute("user");
 		if(u!=null) {
@@ -109,7 +106,9 @@ public class UserController {
 			m.addAttribute("classificaPaese", lrc);
 			return "rank";
 		}else {
-			return"home";
+			String msg="Non hai effettuato il login non puoi veddere le classifiche!";
+			m.addAttribute("message", msg);
+			return"errorpage";
 		}
 	}
 

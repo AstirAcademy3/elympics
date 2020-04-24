@@ -62,8 +62,8 @@
 	</form>
 	<p></p>
 	<div align="center">
-		<a href="registrati.jsp" >Non sei registrato ? Clicca qui ! </a>
+		<a href="registrazione" >Non sei registrato ? Clicca qui ! </a>
 	</div>
-	<jsp:include page="footerLogReg.jsp"></jsp:include>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
