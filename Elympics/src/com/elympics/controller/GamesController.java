@@ -1,5 +1,7 @@
 package com.elympics.controller;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -47,7 +49,10 @@ public class GamesController {
 	@RequestMapping("/salvaPartita")
 	public String salvaPartita(HttpSession session)
 	{
-		
+		String utente= null;
+		int id_gioco=1;
+		Date data= new Date();
+		System.out.println(utente+"   "+id_gioco+"    "+data);
 			return "games";
 	}	
 }
