@@ -4,38 +4,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<meta charset="ISO-8859-1">
-		<title>Login form</title>
-		<script>
-			function myFunction() {
-			  var x = document.getElementById("password");
-			  if (x.type === "password") {
-			    x.type = "text";
-			    document.getElementById('imgEye').src='img/eyeT2.jpg';
-			    document.getElementById("imgEye").style.filter="opacity(100%)";
-			  } else {
-			    x.type = "password";
-			    document.getElementById('imgEye').src='img/eyeT.jpg';
-			    document.getElementById("imgEye").style.filter="opacity(50%)";
-			  }
-		
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js">
+	<meta charset="ISO-8859-1">
+	<title>Login form</title>
+	<script>
+		function functionEye() {
+		  var x = document.getElementById("password");
+		  if (x.type === "password") {
+		    x.type = "text";
+		    document.getElementById('imgEye').src='img/eyeT2.jpg';
+		    document.getElementById("imgEye").style.filter="opacity(100%)";
+		  } else {
+		    x.type = "password";
+		    document.getElementById('imgEye').src='img/eyeT.jpg';
+		    document.getElementById("imgEye").style.filter="opacity(50%)";
+		  }
+		}
+		function submit(e){
+			e.disabled= true;
+			document.form1.submit();
+		}
+		function check(){
+			if(document.form1.invalid){
+				document.getElementById("bt").disabled = true;
 			}
-			function submit(e){
-				e.disabled= true;
-				document.form1.submit();
+			else{
+				document.getElementById("bt").disabled = false;
 			}
-			function check(){
-				if(document.form1.invalid){
-					document.getElementById("bt").disabled = true;
-				}
-				else{
-					document.getElementById("bt").disabled = false;
-					
-				}
-			}
-		</script>
+		}
+	</script>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
@@ -50,7 +49,7 @@
 				<label for="exampleInputPassword1">Password</label>
 				<div class="row" class="passToggle">
 					<div class="inputTogglePass col-md-11"><input class="form-control" type="password" name="password" id="pass" required></div>
-					<div class="imgTogglePass col-sd-1"><img src="img/eyeT.jpg" style="width:100%;" onclick="myFunction()" id="imgEye"/></div>
+					<div class="imgTogglePass col-sd-1"><img src="img/eyeT.jpg" style="width:100%;" onclick="functionEye()"  id="imgEye"/></div>
 				</div>
 			</div>
 			<div class="form-group form-check" align="center">
