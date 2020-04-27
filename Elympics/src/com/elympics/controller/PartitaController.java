@@ -17,37 +17,8 @@ import com.elympics.bean.User;
 import com.elympics.manager.ClassificaManager;
 
 @Controller
-public class GamesController {
-	@RequestMapping("/games")
-	public String games()
-	{
-		return "games";
-	}	
-	
-	@RequestMapping("/home")
-	public String home(Model m)
-	{
-		ClassificaManager manager = new ClassificaManager();
+public class PartitaController {	
 
-		Gioco gioco = new Gioco();
-		//prima riga 
-	    gioco.setId(1);
-		RigaClassificaVO r = manager.getPrimoClassificatoVO(gioco);
-		m.addAttribute("primaRiga", r);
-		//seconda riga 
-		gioco.setId(2);
-		RigaClassificaVO r2 = manager.getPrimoClassificatoVO(gioco);
-		m.addAttribute("secondaRiga", r2);
-		//terza riga 
-		gioco.setId(3);
-		RigaClassificaVO r3 = manager.getPrimoClassificatoVO(gioco);
-		m.addAttribute("terzaRiga", r3);
-		//quarta riga 
-		gioco.setId(4);
-		RigaClassificaVO r4 = manager.getPrimoClassificatoVO(gioco);
-		m.addAttribute("terzaRiga", r4);
-		return "home";
-	}	
 	@PostMapping("/salvapartita")
 	public String salvaPartita(HttpSession session, @RequestParam("gioco") int gioco, @RequestParam("punteggio") int punteggio, Model m)
 	{

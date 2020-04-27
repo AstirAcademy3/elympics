@@ -34,18 +34,36 @@
      
      
       <mvc:resources mapping="/img/**" location="/img/" />
-
-      <!-- mappatura gioco 3 -->
-      <mvc:resources mapping="/gioco/gioco3/img1/**" location="/WEB-INF/gioco3/img1/" />
-      <mvc:resources mapping="/gioco/gioco3/js/**" location="/WEB-INF/gioco3/js/" />
-      <mvc:resources mapping="/gioco/gioco3/audio/**" location="/WEB-INF/gioco3/audio/" />
-      <!-- fine mappatura gioco 3 -->
-
-      <mvc:resources mapping="gioco/img/**" location="/img/" />
-      <mvc:resources mapping="gioco/css/**" location="/WEB-INF/css/" />
-      <mvc:resources mapping="gioco/gioco1/img1/**" location="/WEB-INF/gioco1/img1/" />
-      <mvc:resources mapping="gioco/gioco1/js/**" location="/WEB-INF/gioco1/js/" />
-
       <mvc:resources mapping="/css/**" location="/WEB-INF/css/" />
       <mvc:resources mapping="/js/**" location="/WEB-INF/js/" />
+      
+      
+      <mvc:resources mapping="gioco/img/**" location="/img/" />
+      <mvc:resources mapping="gioco/css/**" location="/WEB-INF/css/" />
+      
+	  <!-- mappatura gioco 1 -->
+      <mvc:resources mapping="gioco1/img1/**" location="/WEB-INF/gioco1/img1/" />
+      <mvc:resources mapping="gioco1/js/**" location="/WEB-INF/gioco1/js/" />
+	  <!-- fine mappatura gioco 1 -->
+	  
+	  <!-- mappatura gioco 2 -->
+      <mvc:resources mapping="gioc2/img1/**" location="/WEB-INF/gioco2/img1/" />
+      <mvc:resources mapping="gioco2/js/**" location="/WEB-INF/gioco2/js/" />
+	  <!-- fine mappatura gioco 2 -->
+	 	  
+      <!-- mappatura gioco 3 -->
+
+      <mvc:resources mapping="/gioco3/img1/**" location="/WEB-INF/gioco3/img1/" />
+      <mvc:resources mapping="/gioco3/js/**" location="/WEB-INF/gioco3/js/" />
+      <mvc:resources mapping="/gioco3/audio/**" location="/WEB-INF/gioco3/audio/" />
+      <!-- fine mappatura gioco 3 -->
+      
+      <!-- mappatura gioco 4 -->
+      <mvc:resources mapping="gioco4/img1/**" location="/WEB-INF/gioco4/img1/" />
+      <mvc:resources mapping="gioco4/js/**" location="/WEB-INF/gioco4/js/" />
+	  <!-- fine mappatura gioco 4 -->
+
+
+      
+
 </beans>

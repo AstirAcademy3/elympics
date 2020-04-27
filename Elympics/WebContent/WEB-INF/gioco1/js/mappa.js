@@ -19,7 +19,7 @@ var ARMA=2;
 var omino = "omino";
 var ominoConSpada = "ominoConSpada";
 
-var pathImg = "gioco1/gioco3/img1/";
+var pathImg = "gioco1/img1/";
 
 // dichiarazione variabili di lavoro
 var i=0;
