@@ -1,4 +1,3 @@
-
 //gestione dell'evento onkeydown:
 function checkKeyDown(e) {
     e = e || window.event;
@@ -8,7 +7,7 @@ function checkKeyDown(e) {
 	case 37: sinistra();   break;
 	case 38: su();    break;
     }    
-    //alert ("The Unicode character code is: " + e.keyCode);   
+    //alert ("The Unicode character code is (key down): " + e.keyCode);   
 }
 
 // gestione dell'evento onkey press:
@@ -21,31 +20,25 @@ function checkKeyPress (event){
     	case 97:  sinistra(); break;
     	case 119: su();       break;
     }
-    //alert ("The Unicode character code is: " + chCode);   
+    //alert ("The Unicode character code is (key press): " + chCode);   
 }
 
-
 function controllaCella(x,y){
-	switch (piano[x][y]){
-		case ARMA:
-			omino = ominoConSpada;
-			piano[x][y] = SFONDO; 
-			return true; 	
-		case OSTACOLO: 
-			return false;
-		case PILLOLA:
-			energia = energia + DELTA_ENERGIA;
-			document.getElementById("energia").innerHTML=energia;
-			piano[x][y] = SFONDO;
-			countPillole--;
-			if (countPillole==0){
-				document.getElementById("energia").innerHTML="<img src=\"coppa.jpg\" >";
-			}
-			return true;
-		default: 
-	      return true; 
+	if(piano[x][y]==PILLOLA){
+		generaOggetto(PILLOLA);
+		testa++;
+		piano[x][y] = testa;
+		ominoX= x;
+		ominoY= y;
+		disegnaCellaSpeciale(x,y,omino)
+		return false;
+	}else if(piano[x][y]>0){ 
+		alert("Game over!");
+		return false;
+	}else{
+		piano[x][y] = testa + 1;
+    	return true; 
 	}
-
 	return true; 
 }
 
@@ -55,29 +48,41 @@ function sposta (daX,daY, aX,aY){
 		var daSrc = "c" +daX+"_"+daY; 
 	    var aSrc  = "c" + aX+"_"+ aY;
 		console.log(daSrc + " " +aSrc);
-        document.getElementById(daSrc).src = pathImg +  piano[daX][daY] + ".jpg";
+
+        for (var i=0; i<R; i++) {
+			for (var j=0; j<C;j++){
+				if(piano[i][j]>0){
+					piano[i][j] = piano[i][j] - 1 ;
+				}
+			}
+		}
+
+		// cancella l'omino e disegna lo sfondo
 		ominoX= aX;
 		ominoY= aY;
-		disegnaOmino();
-	}
+		disegnaPiano();
+	} else {}
 }
 
 function su(){
 	var newX = (ominoX -1 + R)%R; 
+	direzione="N";
+	sposta (ominoX,ominoY, newX,ominoY);
+}
+function giu(){
+	var newX = (ominoX + 1 + R)%R; 
+	direzione="S";
 	sposta (ominoX,ominoY, newX,ominoY);
 }
 
 function sinistra(){
 	var newY = (ominoY -1 + C)%C; 
+	direzione="W";
 	sposta (ominoX,ominoY, ominoX,newY);
-}
-
-function giu(){
-	var newX = (ominoX + 1 + R)%R; 
-	sposta (ominoX,ominoY, newX,ominoY);
 }
 
 function destra(){
 	var newY = (ominoY + 1 + C)%C; 
+	direzione="E";
 	sposta (ominoX,ominoY, ominoX,newY);
 }

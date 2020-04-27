@@ -9,17 +9,19 @@ var armaY = 9;
 // valore iniziale dell'energia
 var energia =0;
 
-// costanti e parametri per la configurazione del gioco
-var PILLOLA = 1;
+// costanti e parametri per la configurazioen del gioco
+var PILLOLA = -10;
 var DELTA_ENERGIA = 20;
 var OSTACOLO=3; 
 var SFONDO = 0;
 var ARMA=2;
 
-var omino = "omino";
+var omino = "testa";
 var ominoConSpada = "ominoConSpada";
+var testa = 1;
+var direzione="E";
 
-var pathImg = "gioco1/gioco3/img1/";
+var pathImg = "gioco2/img1/";
 
 // dichiarazione variabili di lavoro
 var i=0;
@@ -40,9 +42,20 @@ for (var i=0; i<R; i++) {
 	}
 }
 
-// posizionamento di un ostacolo per esempio
-piano[4][4] = OSTACOLO;
-piano[armaX][armaY] = ARMA;
+piano[0][2]=PILLOLA;
+piano[0][0]=1;
+
+function mostraMatriceHTML(){
+	var s = "";
+
+	for (var i=0; i<R; i++) {
+		for (var j=0; j<C;j++){
+			s = s + piano[i][j] + " " ;
+		}
+		s = s + "<br>";
+	}
+	document.getElementById("messaggioDebug").innerHTML=s; 
+}
 
 function disegnaPiano(){
 	for (var i=0; i<R; i++){
@@ -52,18 +65,8 @@ function disegnaPiano(){
 	}
 	// disegna l'omino in una data posizione
 	disegnaCellaSpeciale(ominoX,ominoY,omino); 
-	// disegna l'arma in una data posizione
-	disegnaCellaSpeciale(armaX,armaY,ARMA);
+	document.getElementById("Punteggio: ").innerHTML=testa;
 } 
-
-function generaPillole(){
-    countPillole ++; //vanno raccolti tutti, meglio contarli
-	generaOggetto(PILLOLA);
-}
-
-function generaOstacolo(){
-	generaOggetto(OSTACOLO);
-}
 
 function generaOggetto(valOggetto){
 	// si genera un indice di riga casuale tra 0 e R
@@ -72,22 +75,32 @@ function generaOggetto(valOggetto){
 	// si genera un indice di colonna casuale tra 0 e C
 	var c = Math.random(); 
 	ry = Math.round( c * C);
+	if(piano[rx][ry]==0){
 	// utilizzando rx e rc si ha una posizione casuale nel piano di gioco
 	piano[rx][ry] = valOggetto; //posiziona oggetto nella matrice
+	}else{
+		generaOggetto(valOggetto);
+		disegnaCella(rx,ry);
+	}
 	// in rx, ry c'è un nuovo valore quindi meglio ridisegnare la cella
-	disegnaCella(rx,ry);	
 }
 
 function disegnaCella(i,j){
 	var id = "c"+i+"_"+j;
-	var src = pathImg + piano[i][j] + ".jpg";
+	var src ="";
+	if(piano[i][j]>0){
+		src = pathImg + 1 + ".jpg";
+	}else if(piano[i][j]==-10){
+		src = pathImg + 2 + ".jpg";
+	}else{
+		src = pathImg + 0 + ".jpg";
+	}
 	document.getElementById(id).src= src;
 } 
 
 function disegnaCellaSpeciale(i,j,valore) {
 	var id = "c"+i+"_"+j;
-	var src = pathImg + valore + ".jpg";
+	var src = pathImg + valore + direzione + ".jpg";
 	console.log(id + " " + src);
 	document.getElementById(id).src=src;
-	
-}
+} 
