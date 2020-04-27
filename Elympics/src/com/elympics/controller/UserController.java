@@ -25,14 +25,8 @@ import com.elympics.manager.UserManager;
 @Controller
 @Scope("session")
 public class UserController {
+	
 
-	@RequestMapping("/")
-	//read the provided form data
-	public String index()
-	{
-		System.out.println("Passaggio dalla index");
-		return "home";
-	}
 	@RequestMapping("/login")
 	//read the provided form data
 	public String display(@RequestParam("username") String username,@RequestParam("password") String password,Model m, HttpSession session)
@@ -51,7 +45,7 @@ public class UserController {
 			String msg="Hello "+ utente.getNome();
 			//add a message to the model
 			m.addAttribute("message", msg);
-			return "home";
+			return "redirect:/home";
 		}
 		else
 		{
@@ -65,26 +59,9 @@ public class UserController {
 	public String logout(HttpSession session)
 	{
 		session.invalidate();
-		return "home";
+		return "redirect:/home";
 	}
-	@RequestMapping("/registrazione")
-	//read the provided form data
-	public String registrazione()
-	{
-		return "registrati";
-	}
-	@RequestMapping("/prelogin")
-	//read the provided form data
-	public String prelogin()
-	{
-		return "login";
-	}
-	@RequestMapping("/aboutus")
-	//read the provided form data
-	public String aboutus()
-	{
-		return "aboutus";
-	}
+
 	@RequestMapping("/rank")
 	//read the provided form data
 	public String rank(HttpSession session, Model m)
@@ -148,14 +125,6 @@ public class UserController {
 			return "errorpage";
 		}	
 	}
-	@RequestMapping("/gioco2")
-	   public String gioco1() {
-			System.out.println("sono entrato nel controller di gioco1");
-	      return "g1";
-	   }
-	@GetMapping("/gioco")
-	public String getUser(@RequestParam("id") String id){
 
-		return "g"+id;
-	}
+
 }
