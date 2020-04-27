@@ -40,7 +40,8 @@ public class PartitaController {
 		//int id_gioco=3;
 		//Date data= new Date();
 		System.out.println(u+"   "+gioco+"    "+punteggio);
-			return "g"+gioco;
+			//return "g"+gioco;
+			return "redirect:/gioco?id="+gioco;
 	}	
 }
 
