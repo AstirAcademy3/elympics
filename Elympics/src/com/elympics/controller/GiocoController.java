@@ -12,7 +12,7 @@ public class GiocoController {
 	
 	public class HelloController{
 	 
-		@RequestMapping("/gioco1")
+		@RequestMapping("/gioco3")
 		   public String gioco1() {
 				System.out.println("sono entrato nel controller di gioco1");
 		      return "g1";
