@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="gioco2/js/mappa.js"></script>
+	<script type="text/javascript" src="gioco2/js/mappa.js"></script>
 	<script type="text/javascript" src="gioco2/js/movimento.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="gioco2/css/gioco.css">
+	<link rel="stylesheet" type="text/css" href="gioco.css">
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
@@ -23,7 +23,7 @@
 		<!--<input type="button" onClick="mostraMatriceHTML()"  value="mostra matrice" ></input>-->
 		<br><br>
 		<div class="pianoGioco">
-			<img id="c0_0" src="gioco2/img1/0.jpg">
+			<img id="c0_0" src="gioco2/img1/0.jpg" >
 			<img id="c0_1" src="gioco2/img1/0.jpg">
 			<img id="c0_2" src="gioco2/img1/0.jpg">
 			<img id="c0_3" src="gioco2/img1/0.jpg">
@@ -235,8 +235,8 @@
 		</div>
 			
 		<form method="POST" action="salvapartita">
-			<input type="hidden" value="3" name="gioco"></input>
-			<input type ="hidden" value="50" name="punteggio" id="punteggio"></input>
+			<input type="hidden" value="2" name="gioco"></input>
+			<input type ="hidden" value="0" name="punteggio" id="punteggio"></input>
 			<input type="submit"  value="Salva" class="btn"></input>
 		</form>
 	</div>

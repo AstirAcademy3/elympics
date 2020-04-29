@@ -134,4 +134,10 @@ public class PartitaHBDAO extends HBDAO implements PartitaDAO  {
 		}
 		return result;
 	}
+
+	@Override
+	public List<RigaClassifica> getGiochiPartitaPerPaese(User u) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

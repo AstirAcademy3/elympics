@@ -59,7 +59,7 @@ public class MenuController {
 		return "aboutus";
 	}
 	
-	@GetMapping("/gioco")
+	@RequestMapping("/gioco")
 	public String getUser(@RequestParam("id") String id){
 
 		return "g"+id;

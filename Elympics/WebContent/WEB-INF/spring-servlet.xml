@@ -47,9 +47,8 @@
 	  <!-- fine mappatura gioco 1 -->
 	  
 	  <!-- mappatura gioco 2 -->
-      <mvc:resources mapping="gioc2/img1/**" location="/WEB-INF/gioco2/img1/" />
+      <mvc:resources mapping="gioco2/img1/**" location="/WEB-INF/gioco2/img1/" />
       <mvc:resources mapping="gioco2/js/**" location="/WEB-INF/gioco2/js/" />
-      <mvc:resources mapping="gioco2/css/**" location="/WEB-INF/gioco2/css/" />
 	  <!-- fine mappatura gioco 2 -->
 	 	  
       <!-- mappatura gioco 3 -->
