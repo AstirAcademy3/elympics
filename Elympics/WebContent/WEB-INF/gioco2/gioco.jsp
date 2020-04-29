@@ -234,11 +234,51 @@
 			<img id="c9_19" src="gioco2/img1/0.jpg">
 		</div>
 			
-		<form method="POST" action="salvapartita">
-			<input type="hidden" value="2" name="gioco"></input>
-			<input type ="hidden" value="0" name="punteggio" id="punteggio"></input>
-			<input type="submit"  value="Salva" class="btn"></input>
-		</form>
+		<!-- Button to Open the Modal -->
+  <button hidden id="btnModal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Game Over!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Hai finito la partita!
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <input type="button" class="btn btn-danger" data-dismiss="modal" value="Close" class="btn" form="formSalvataggio" onclick="submitClose()"></input>
+          <input type="button"  class="btn btn-info" data-dismiss="modal" value="Save" class="btn" form="formSalvataggio"
+          	onclick="submitSave()"></input>
+		</div>
+        
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+  function submitSave(){
+	  document.getElementById("formSalvataggio").submit();
+  }
+  function submitClose(){
+	  document.getElementById("formSalvataggio").action="gioco?id=3";
+	  document.getElementById("formSalvataggio").submit();
+  }
+  </script>
+	<form method="POST" action="salvapartita" id="formSalvataggio"> 
+		<input type="hidden" value="3" name="gioco"></input>
+		<input type ="hidden" value="0" name="punteggio" id="punteggio"></input>
+		<input type="submit"  value="Salva" class="btn"></input>
+	</form>
 	</div>
 </body>
 </html>

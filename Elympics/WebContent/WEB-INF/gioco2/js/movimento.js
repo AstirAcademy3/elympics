@@ -30,10 +30,11 @@ function controllaCella(x,y){
 		piano[x][y] = testa;
 		ominoX= x;
 		ominoY= y;
-		disegnaCellaSpeciale(x,y,omino)
+		disegnaPiano();
+		disegnaCellaSpeciale(x, y, omino);
 		return false;
 	}else if(piano[x][y]>0){ 
-		alert("Game over!");
+		gameOver();
 		return false;
 	}else{
 		piano[x][y] = testa + 1;
@@ -62,6 +63,17 @@ function sposta (daX,daY, aX,aY){
 		ominoY= aY;
 		disegnaPiano();
 	} else {}
+}
+
+function gameOver(){
+	init();
+	//document.getElementById("pianoGioco").innerHTML = "GAME OVER"; 
+	//alert("GAME OVER!");
+	clearInterval(timer);
+	clearInterval(timerC1);
+	clearInterval(timerC2);
+	document.getElementById("btnModal").click();
+
 }
 
 function su(){
