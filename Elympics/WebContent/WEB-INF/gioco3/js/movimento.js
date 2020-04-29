@@ -79,23 +79,22 @@ function Cacciatore (x,y,nome){
     this.x=x;  // posizione iniziale del cacciatore 
     this.y=y;  // posizione iniziale del cacciatore 
     this.nome=nome; // proprietà utilizzata per caricare immagine del cacciatore (es. blu.jpg)
+    this.inseguimento=false;
 }
 
-var c1  = new Cacciatore(9,0,"blu");
+var c1  = new Cacciatore(7,7,"blu");
 var c2  = new Cacciatore(0,19,"rosso");
+var timerC1 =setInterval(avviaCacciatore1,1010);
+var timerC2 =setInterval(avviaCacciatore2,1000);
 
+function avviaCacciatore1(){
+	c1.insegui();
+}
+function avviaCacciatore2(){
+	c2.insegui();
+}
 function sposta (daX,daY, aX,aY){
-	if (controllaCella(aX, aY)){
-		if ((c1.x-ominoX)==5 || (c2.x-ominoX)==5) {
-			setInterval("c1.insegui()",1010);
-			setInterval("c2.insegui()",1000);
-			audioCacciatori.rewindAndPlay();
-		}
-		if((c1.y-ominoY)==5 || (c2.y-ominoY)==5){
-			setInterval("c1.insegui()",1010);
-			setInterval("c2.insegui()",1000);
-			audioCacciatori.rewindAndPlay();
-		}
+	if(controllaCella(aX,aY)){
 		var daSrc = "c" +daX+"_"+daY; 
 	    var aSrc  = "c" + aX+"_"+ aY;
 		console.log(daSrc + " " +aSrc);
@@ -105,32 +104,34 @@ function sposta (daX,daY, aX,aY){
 		ominoX= aX;
 		ominoY= aY;
 		disegnaOmino();
-	} else {
-		
-		//non può spostarsi...
-		
 	}
 }
+var finito = false;
 
 Cacciatore.prototype.insegui = function (){
 
     var precX = this.x;
     var precY = this.y;
  
-    // aggiornamento della posizione
-    if (this.x < ominoX) { this.x++;}
-    if (this.x > ominoX) { this.x--;}
- 
-    if (this.y < ominoY) { this.y++;}
-    if (this.y > ominoY) { this.y--;}
-
+    if((Math.abs((this.x - ominoX)<5) && Math.abs((this.y-ominoY)<5)) || this.inseguimento){
+    	this.inseguimento=true;
+    	audioCacciatori.rewindAndPlay();
+    	// aggiornamento della posizione
+        if (this.x < ominoX) { this.x++;}
+        if (this.x > ominoX) { this.x--;}
+     
+        if (this.y < ominoY) { this.y++;}
+        if (this.y > ominoY) { this.y--;}
+    }
+    
     var prec_id = "c"+precX+"_"+ precY;      // "gioco3/img1/" + "0.jpg"
     document.getElementById(prec_id).src   = pathImg + piano[precX][precY] + ".jpg";
     
     var curr_id = "c"+this.x+"_"+this.y;      // "gioco3/img1/" + "0.jpg"
     document.getElementById(curr_id).src   = pathImg + this.nome + ".jpg";
     
-    if (this.x == ominoX && this.y == ominoY){
+    if (this.x == ominoX && this.y == ominoY && !finito){
+        finito=true;
         gameOver();
     }
 }
@@ -140,6 +141,8 @@ function gameOver(){
 	//document.getElementById("pianoGioco").innerHTML = "GAME OVER"; 
 	//alert("GAME OVER!");
 	clearInterval(timer);
+	clearInterval(timerC1);
+	clearInterval(timerC2);
 	document.getElementById("btnModal").click();
 
 }

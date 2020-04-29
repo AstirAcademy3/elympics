@@ -73,12 +73,12 @@ public class UserController {
 		User u= (User) session.getAttribute("user");
 		if(u!=null) {
 			UserManager manager = new UserManager();
-			Gioco gioco = new Gioco();
 			List<RigaClassificaVO> lrc = new ArrayList<RigaClassificaVO>();
-			for(int i=1; i<=4; i++) {
-			gioco.setId(i);
-			RigaClassificaVO rc=manager.getPrimoClassificatoPerPaese(u, gioco);
-			lrc.add(rc);
+			//caricare i giochi che hanno almeno una partita con il paese dell'utente 
+			List<Gioco> giochi = manager.getGiochiPartitaPerPaese(u);
+			for(Gioco gioco : giochi) {
+				RigaClassificaVO rc=manager.getPrimoClassificatoPerPaese(u, gioco);
+				lrc.add(rc);
 			}
 			m.addAttribute("classificaPaese", lrc);
 			return "rank";

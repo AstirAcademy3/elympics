@@ -66,13 +66,6 @@ function azzerraPiano(){
 	}	
 }
 
-function init(){
-	
-	azzerraPiano();
-	disegnaPiano();
-	
-}
-
 function disegnaPiano(){
 	timer=setInterval ("clessidra()", 1000);
 	for (var i=0; i<R; i++) {
@@ -91,6 +84,16 @@ function disegnaPiano(){
 	// disegna l'arma in una data posizione
 	disegnaCellaSpeciale(armaX,armaY,ARMA);
 } 
+
+function init(){
+	
+	azzerraPiano();
+	ominoX=0;
+	ominoY=0;
+	disegnaPiano();
+	
+	
+}
 
 function generaPillole(){
     countPillole ++; //vanno raccolti tutti, meglio contarli

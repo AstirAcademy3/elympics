@@ -72,8 +72,8 @@ d<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 		<tbody>
 		<c:forEach items = "${classificaPaese}"  var="rc">
 			<tr>
-				<th scope="row">${user.paese}</th>
-				<td align="center">${user.username}</td>
+				<th scope="row">${rc.user.paese}</th>
+				<td align="center">${rc.user.username}</td>
 				<td align="center">${rc.gioco.nome}</td>
 				<td align="center">${rc.punti}</td>
 			</tr>
