@@ -229,9 +229,9 @@
 			<img id="c9_19" src="gioco1//img1/0.jpg"class="g">
 		</div>
 
-		<input type="button" onClick="generaPillole()" value="Genera pillole"  class="btn"></input>
-		<input type="button" onClick="generaOstacolo()" value="Genera ostacolo" class="btn"></input>
-		<input type="button" onClick="disegnaPiano()" value="Disegna piano" class="btn"></input>
+		<input type="hidden" id="btnPills"onClick="generaPillole()" value="Genera pillole"  class="btn"></input>
+		<input type="hidden" onClick="generaOstacolo()" value="Genera ostacolo" class="btn"></input>
+		<input type="button" onClick="disegnaPiano()" value="Gioca" class="btn"></input>
 
 		<p id="posizioneOmino"></p>
 		<p id="messaggioDebug"></p>

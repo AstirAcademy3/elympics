@@ -68,10 +68,9 @@ function disegnaPiano(){
 	disegnaCellaSpeciale(ominoX,ominoY,omino); 
 	// disegna l'arma in una data posizione
 	disegnaCellaSpeciale(armaX,armaY,ARMA);
-	disegnaCellaSpeciale(9,9,PILLOLA);
 	var timerC1=setInterval("c1.insegui()",1500);
 	var timerC2=setInterval("c2.insegui()",1501);
-	
+	document.getElementById("btnPills").click();
 } 
 
 
@@ -85,7 +84,6 @@ function generaOstacolo(){
 }
 
 function generaOggetto(valOggetto){
-	alert("metodo genera oggetto chiamato");
 	// si genera un indice di riga casuale tra 0 e R
 	var r = Math.random(); 
 	rx = Math.round( r * R);
