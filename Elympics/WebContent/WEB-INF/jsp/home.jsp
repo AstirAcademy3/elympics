@@ -107,7 +107,7 @@
 		</div>
 		&nbsp
 		<div class="container-fluid c2">
-			<img src="img/gioco4.png"  align="right" height="10%" width="15%" style="margin-left:1em;"><div align="justify">Il gioco numero 4 consiste in un omino ,che viene controllato con le apposite frecce della tastiera, il quale deve prendere il maggior numero di sfere di energia prima che altri il cacciatore mosso automaticamente riesca a raggiungerlo ed evitando gli ostacoli. Una volta che viene preso la partita finisce e il punteggio viene salvato nella classifica rank solo se l'utente ha già eseguito il login.</div>
+			<img src="img/gioco4.png"  align="right" height="10%" width="15%" style="margin-left:1em;"><div align="justify">Il gioco numero 4 consiste in un omino ,che viene controllato con le apposite frecce della tastiera, il quale deve prendere il maggior numero di sfere di energia prima che altri il cacciatore mosso automaticamente riesca a prenderlo. Una volta che viene preso la partita finisce e il punteggio viene salvato nella classifica rank solo se l'utente ha già eseguito il login.</div>
 		</div>
 	</div>
 <!-- Include il footer -->
