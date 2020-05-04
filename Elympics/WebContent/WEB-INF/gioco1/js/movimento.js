@@ -34,14 +34,11 @@ function controllaCella(x,y){
 		case OSTACOLO: 
 			return false;
 		case PILLOLA:
+			generaOggetto(PILLOLA);
 			energia = energia + DELTA_ENERGIA;
 			document.getElementById("energia").innerHTML=energia;
-			document.getElementById("punteggio").value=energia;
 			piano[x][y] = SFONDO;
 			countPillole--;
-			if (countPillole==0){
-				document.getElementById("energia").innerHTML="<img src=\"coppa.jpg\" >";
-			}
 			return true;
 		default: 
 	      return true; 
@@ -49,6 +46,16 @@ function controllaCella(x,y){
 
 	return true; 
 }
+
+
+function Cacciatore (x,y,nome){
+    this.x=x;  // posizione iniziale del cacciatore 
+    this.y=y;  // posizione iniziale del cacciatore 
+    this.nome=nome; // proprietà utilizzata per caricare immagine del cacciatore (es. blu.jpg)
+}
+var c1  = new Cacciatore(9,0,"nemico");
+var c2  = new Cacciatore(0,19,"nemico");
+
 
 function sposta (daX,daY, aX,aY){
 	if (controllaCella(aX, aY)){
@@ -59,9 +66,32 @@ function sposta (daX,daY, aX,aY){
         document.getElementById(daSrc).src = pathImg +  piano[daX][daY] + ".jpg";
 		ominoX= aX;
 		ominoY= aY;
-		disegnaOmino();
+		disegnaCellaSpeciale(ominoX,ominoY,omino);
 	}
 }
+
+
+Cacciatore.prototype.insegui = function (){
+    var precX = this.x;
+    var precY = this.y;
+    // aggiornamento della posizione
+    if (this.x < ominoX) { this.x++;}
+    if (this.x > ominoX) { this.x--;}
+ 
+    if (this.y < ominoY) { this.y++;}
+    if (this.y > ominoY) { this.y--;}
+
+    var prec_id = "c"+precX+"_"+ precY;      // "gioco3/img1/" + "0.jpg"
+    document.getElementById(prec_id).src   = pathImg + piano[precX][precY] + ".jpg";
+    
+    var curr_id = "c"+this.x+"_"+this.y;      // "gioco3/img1/" + "0.jpg"
+    document.getElementById(curr_id).src   = pathImg + this.nome + ".jpg";
+    
+    if (this.x == ominoX && this.y == ominoY){
+        gameOver();
+    }
+}
+
 
 function su(){
 	var newX = (ominoX -1 + R)%R; 
@@ -81,4 +111,11 @@ function giu(){
 function destra(){
 	var newY = (ominoY + 1 + C)%C; 
 	sposta (ominoX,ominoY, ominoX,newY);
+}
+function gameOver(){
+	clearInterval(timerC1);
+	clearInterval(timerC2);
+	//document.getElementById("btnModal").click();
+	init();
+	alert("Game Over");
 }
