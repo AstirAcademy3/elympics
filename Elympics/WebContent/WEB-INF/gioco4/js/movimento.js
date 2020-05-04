@@ -34,18 +34,16 @@ function controllaCella(x,y){
 		case OSTACOLO: 
 		return false; 
 		case PILLOLA:
-		audioPillola.rewindAndPlay();
-		energia = energia + DELTA_ENERGIA;
-		document.getElementById("punteggio").value=energia;
-		barraEnergia();
-		piano[x][y] = SFONDO;
-		countPillole--;
-		if (countPillole==0){
-			document.getElementById("energia").innerHTML="<img src=\"coppa.jpg\" >";
-		}
-		return true;
+			audioPillola.rewindAndPlay();
+			energia = energia + DELTA_ENERGIA;
+			document.getElementById("punteggio").value=energia;
+			document.getElementById("energia").value=energia;
+			piano[x][y] = SFONDO;
+			countPillole--;
+		
+			return true;
 		default: 
-		return true; 
+			return true; 
 	}
 
 	return true; 
@@ -101,10 +99,16 @@ function Cacciatore (x,y,nome){
 }
 
 function gameOver(){
-	init();
-	alert("GAME OVER!");
-	clearInterval(timer);
+	
+	
+	clearInterval(timerC1);
+	clearInterval(timerC2);
+	clearInterval(timerC3);
+	clearInterval(timerPillole);
+	azzerraPiano();
+	disegnaPiano();
 	document.getElementById("btnModal").click();
+	alert("Game Over!");
 }
 
 
@@ -131,26 +135,10 @@ Cacciatore.prototype.insegui = function (){
     document.getElementById(curr_id).src   = pathImg + this.nome + ".jpg";
 
   if (this.x==ominoX && this.y==ominoY)  {
-  	alert("GAME OVER!")
+  	gameOver();
   }
 }
 
-function barraEnergia() {
 
-   var elem = document.getElementById("barraEnergia");   
 
-    if (energia == 100) {
 
-elem.style.width = energia + '%';
-
-energia = 100;   
-
-     }  else {
-
-       energia++;  
-
-       elem.style.width = energia + '%'; 
-
-    }
-
-}

@@ -7,15 +7,12 @@
 <script type="text/javascript" src="gioco4/js/movimento.js"></script>
 </head>
 <body onkeydown="checkKeyDown(event);" onkeypress="checkKeyPress(event)" >
+<jsp:include page="../jsp/header.jsp"></jsp:include>
 
-
-<div class="progress" style="width:50%">
-    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:0%" id="barraEnergia"></div>
+  <div class="progress"style="width:50%">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:0%" id="barraTempo"></div>
   </div>
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:100%" id="barraTempo"></div>
-  </div>
-
+		<p class="txt">ENERGIA: </p><p id="energia" class="txt">0</p>
   <p></p>
 <img id="c0_0" src="gioco4/img1/0.jpg">
 <img id="c0_1" src="gioco4/img1/0.jpg">

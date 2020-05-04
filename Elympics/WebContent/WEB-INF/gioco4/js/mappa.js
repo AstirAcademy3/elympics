@@ -11,7 +11,7 @@ var energia =0;
 
 // costanti e parametri per la configurazioen del gioco
 var PILLOLA = 1;
-var DELTA_ENERGIA = 5;
+var DELTA_ENERGIA = 10;
 var OSTACOLO=3; 
 var SFONDO = 0;
 var ARMA=2;
@@ -24,6 +24,7 @@ var ominoConSpada = "ominoConSpada";
 var pathImg = "gioco4/img1/";
 
 var timer;
+var timerPillole;
 
 // dichiarazione variabili di lavoro
 var i=0;
@@ -77,6 +78,10 @@ function generaPillole(){
 	generaOggetto(PILLOLA);
 }
 
+function generaPillola(){
+	generaOggetto(PILLOLA);
+};
+
 function generaOstacolo(){
 	generaOggetto(OSTACOLO);
 }
@@ -103,8 +108,7 @@ function play(){
 	ominoX = 0; 
     ominoY = 0;
 	testa= 1;
-	piano[0][2]=PILLOLA;
-	piano[0][0]=1;
+	timerPillola= setInterval(generaPillola, 1000);
 	disegnaPiano();
 	// disegna l'omino in una data posizione
 	disegnaCellaSpeciale(ominoX,ominoY,omino); 
@@ -116,7 +120,7 @@ function play(){
 	var barra = document.getElementById("barraTempo");
 	barra.style.width = "100%";   
 	timer = setInterval ("clessidra()", 1000);
-	
+	disegnaCacciatori();
 }
 
 
@@ -133,7 +137,6 @@ function disegnaCellaSpeciale(i,j,valore) {
 	document.getElementById(id).src=src;
 	
 } 
-
 function disegnaOmino() {
 	disegnaCellaSpeciale(ominoX,ominoY,omino);
 	document.getElementById("posizioneOmino").innerHTML=" coordinate omino: Omino(" + ominoX + "," + ominoY + ")"; 
@@ -142,17 +145,21 @@ function disegnaOmino() {
 	var c1  ;
 	var c2  ;
 	var c3 ;
+var timerC1;
+var timerC2;
+var timerC3;
 
 function disegnaCacciatori(){
 	c1 =new Cacciatore(9,0,"blu");
 	c2 =new Cacciatore(0,19,"rosso");
 	c3 =new Cacciatore(0,19,"rosso");
-	setInterval("c1.insegui()", 1000); 
-	setInterval("c2.insegui()", 2000); 
-	setInterval("c3.insegui()", 3000); 
+
+	//timerC1= setInterval("c1.insegui()", 1000); 
+	//timerC2= setInterval("c2.insegui()", 5000); 
+	//timerC3= setInterval("c3.insegui()", 10000); 
 }
 
-setInterval ("clessidra()", 1000);
+
 
 //var tempo = 3000 * 60; // millisecondi 
 
@@ -176,6 +183,7 @@ function clessidra(){
 	barra.innerHTML = "time: " +  width + "%";  
 	
 	if (width < 0 ){
+		clearInterval(timer);
 			gameOver();
 	}
 }
@@ -192,6 +200,7 @@ function init(){
 	
 	azzerraPiano();
 	disegnaPiano();
+	disegnaCacciatori();
 	
 }
 
