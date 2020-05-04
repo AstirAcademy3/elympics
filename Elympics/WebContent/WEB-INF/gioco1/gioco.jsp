@@ -3,23 +3,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript" src="gioco1/js/mappa.js"></script>
-	<script type="text/javascript" src="gioco1/js/movimento.js"></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="gioco.css">
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="gioco1/js/mappa.js"></script>
+<script type="text/javascript" src="gioco1/js/movimento.js"></script>
 </head>
-<body>
 <body onkeydown="checkKeyDown(event);" onkeypress="checkKeyPress(event)">
 	<jsp:include page="../jsp/header.jsp"></jsp:include>
 	<div class="container">
 		<div class="game">
 			<p class="txt">ENERGIA: </p><p id="energia" class="txt">0</p>
-			<img id="c0_0" src="gioco1//img1/0.jpg" class="g">
+			<img id="c0_0" src="gioco1/img1/0.jpg" class="g">
 			<img id="c0_1" src="gioco1//img1/0.jpg" class="g">
 			<img id="c0_2" src="gioco1//img1/0.jpg" class="g">
 			<img id="c0_3" src="gioco1//img1/0.jpg" class="g">
