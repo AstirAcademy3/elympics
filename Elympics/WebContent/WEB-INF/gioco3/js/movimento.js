@@ -30,24 +30,24 @@ function checkKeyPress (event){
 function controllaCella(x,y){
 	switch (piano[x][y]){
 		case ARMA:
-		omino = ominoConSpada;
-		piano[x][y] = SFONDO; 
-		return true; 	
+			omino = ominoConSpada;
+			piano[x][y] = SFONDO; 
+			return true; 	
 		case OSTACOLO: 
-		return false; 
+			return false; 
 		case PILLOLA:
-		audioPillola.rewindAndPlay();
-		energia = energia + DELTA_ENERGIA;
-		document.getElementById("punteggio").value=energia;
-		barraEnergia();
-		piano[x][y] = SFONDO;
-		countPillole--;
-		if (countPillole==0){
-			document.getElementById("energia").innerHTML="<img src=\"coppa.jpg\" >";
-		}
-		return true;
+			audioPillola.rewindAndPlay();
+			energia = energia + DELTA_ENERGIA;
+			document.getElementById("energia").innerHTML=energia;
+			piano[x][y] = SFONDO;
+			countPillole--;
+			if (countPillole==0){
+				document.getElementById("energia").innerHTML="<img src=\"coppa.jpg\" >";
+				document.getElementById("btnModal").click();
+			}
+			return true;
 		default: 
-		return true; 
+	      return true; 
 	}
 
 	return true; 
@@ -103,6 +103,10 @@ function sposta (daX,daY, aX,aY){
 		ominoX= aX;
 		ominoY= aY;
 		disegnaOmino();
+	} else {
+		
+		//non può spostarsi...
+		
 	}
 }
 var finito = false;
