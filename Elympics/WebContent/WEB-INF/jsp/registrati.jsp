@@ -63,9 +63,9 @@
 		   </script>
 	    </div>
 	    <div class="form-group col-md-4">
-	      <label for="inputState">State</label>
-	      <select id="inputState" class="form-control">
-	        <option selected>Choose...</option>
+	      <label for="paese">State</label>
+	      <select name="paese" id="paese" class="form-control">
+	        <option selected>Scegli...</option>
 	        <option>Austria</option>
 	        <option>Belgio</option>
 	        <option>Bulgaria</option>
