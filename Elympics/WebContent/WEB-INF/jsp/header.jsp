@@ -16,7 +16,7 @@
 	<link rel='icon' href='img/favicon1.ico' type='image/x-icon' sizes="40x40" />
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-link bg-link" >
+<nav class="navbar navbar-expand-lg navbar-link bg-link" style="background-color: white;">
 
 		<img class="astirimg" src="img/astir.png">
 		<div class="cvoci text-center">
