@@ -95,19 +95,19 @@
 		<h2 class="nw" align="center">Descrizione giochi</h2>
 		&nbsp
 	  	<div class="container-fluid c1">
-		  <img src="img/gioco1.png"  align="left" height="10%" width="15%" style="margin-right:1em;"><div align="justify">Il gioco numero 1 consiste in un omino ,che viene controllato con le apposite frecce della tastiera, il quale deve prendere il maggior numero di coppe prima che altri due cacciatori situati sul piano di gioco e mossi automaticamente riescano a prenderlo. Una volta che viene preso la partita finisce e il punteggio viene salvato nella classifica rank solo se l'utente ha già eseguito il login.</div>
+		  <img src="img/gioco1.png"  align="left" height="10%" width="15%" style="margin-right:1em;"><div align="justify">Il gioco Cup Hunter consiste in un omino ,che viene controllato con le apposite frecce della tastiera, il quale deve prendere il maggior numero di coppe prima che altri due cacciatori situati sul piano di gioco e mossi automaticamente riescano a prenderlo. Una volta che viene preso la partita finisce e il punteggio viene salvato nella classifica rank solo se l'utente ha già eseguito il login.</div>
 		</div>
 		&nbsp
 		<div class="container-fluid c2">
-			<img src="img/gioco2.png"  align="right" height="10%" width="15%" style="margin-left:1em;"><div align="justify">Il gioco numero 2 consiste in un serpente che mangiando il frutto che appare sul display si allunga, e il giocatore guadagna dei punti. Si muove utilizzando le apposite frcce situate sulla tastiera e deve evitare di sbattere contro sé stesso, cosa sempre più difficile man mano che il suo corpo si allunga. Una volta che si ha perso il punteggio viene salvato nella classifica rank solo se l'utente ha già eseguito il login.</div>
+			<img src="img/gioco2.png"  align="right" height="10%" width="15%" style="margin-left:1em;"><div align="justify">Il gioco Snake consiste in un serpente che mangiando il frutto che appare sul display si allunga, e il giocatore guadagna dei punti. Si muove utilizzando le apposite frcce situate sulla tastiera e deve evitare di sbattere contro sé stesso, cosa sempre più difficile man mano che il suo corpo si allunga. Una volta che si ha perso il punteggio viene salvato nella classifica rank solo se l'utente ha già eseguito il login.</div>
 		</div>
 		&nbsp
 	  	<div class="container-fluid c1">
-		  <img src="img/gioco3.png"  align="left" height="10%" width="15%" style="margin-right:1em;"><div align="justify">Il gioco numero 3 consiste in un omino che deve prendere il maggior numero di coppe prima che altri due cacciatori situati sul piano di gioco e mossi automaticamente riescano a prenderlo, l'omino viene controllato con le apposite frecce della tastiera. Una volta che viene preso la partita finisce e il punteggio viene salvato nella classifica rank solo se l'utente ha già eseguito il login.</div>
+		  <img src="img/gioco3.png"  align="left" height="10%" width="15%" style="margin-right:1em;"><div align="justify">Il gioco Pills Challenge consiste in un omino che deve prendere il maggior numero di coppe prima che altri due cacciatori situati sul piano di gioco e mossi automaticamente riescano a prenderlo, l'omino viene controllato con le apposite frecce della tastiera. Una volta che viene preso la partita finisce e il punteggio viene salvato nella classifica rank solo se l'utente ha già eseguito il login.</div>
 		</div>
 		&nbsp
 		<div class="container-fluid c2">
-			<img src="img/gioco4.png"  align="right" height="10%" width="15%" style="margin-left:1em;"><div align="justify">Il gioco numero 4 consiste in un omino ,che viene controllato con le apposite frecce della tastiera, il quale deve prendere il maggior numero di sfere di energia prima che altri il cacciatore mosso automaticamente riesca a prenderlo. Una volta che viene preso la partita finisce e il punteggio viene salvato nella classifica rank solo se l'utente ha già eseguito il login.</div>
+			<img src="img/gioco4.png"  align="right" height="10%" width="15%" style="margin-left:1em;"><div align="justify">Il gioco Catch Stars consiste in un omino ,che viene controllato con le apposite frecce della tastiera, il quale deve prendere il maggior numero di sfere di energia prima che altri il cacciatore mosso automaticamente riesca a prenderlo. Una volta che viene preso la partita finisce e il punteggio viene salvato nella classifica rank solo se l'utente ha già eseguito il login.</div>
 		</div>
 	</div>
 <!-- Include il footer -->
