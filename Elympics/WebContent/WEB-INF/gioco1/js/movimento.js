@@ -37,6 +37,7 @@ function controllaCella(x,y){
 			generaOggetto(PILLOLA);
 			energia = energia + DELTA_ENERGIA;
 			document.getElementById("energia").innerHTML=energia;
+			document.getElementById("punteggio").value=energia;
 			piano[x][y] = SFONDO;
 			countPillole--;
 			return true;
