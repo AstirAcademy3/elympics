@@ -66,13 +66,38 @@
 	      <label for="inputState">State</label>
 	      <select id="inputState" class="form-control">
 	        <option selected>Choose...</option>
-	        <option>...</option>
+	        <option>Austria</option>
+	        <option>Belgio</option>
+	        <option>Bulgaria</option>
+	        <option>Cechia</option>
+	        <option>Cipro</option>
+	        <option>Croazia</option>
+	        <option>Estonia</option>
+	        <option>Finlandia</option>
+	        <option>Francia</option>
+	        <option>Germania</option>
+	        <option>Grecia</option>
+	        <option>Irlanda</option>
+	        <option>Italia</option>
+	        <option>Lettonia</option>
+	        <option>Lituania</option>
+	        <option>Lussemburgo</option>
+	        <option>Malta</option>
+	        <option>Paesi Bassi</option>
+	        <option>Polonia</option>
+	        <option>Portogallo</option>
+	        <option>Romania</option>
+	        <option>Slovacchia</option>
+	        <option>Slovenia</option>
+	        <option>Spagna</option>
+	        <option>Svezia</option>
+	        <option>Ungheria</option>
 	      </select>
 	    </div>
 	    <div class="form-group col-md-3">
 	      <label for="inputState">Sesso</label>
 	      <select id="inputState" class="form-control">
-	        <option selected> </option>
+	        <option selected>Choose...</option>
 	        <option>Maschio</option>
 	        <option>Femmina</option>
 	        <option>Altro</option>
