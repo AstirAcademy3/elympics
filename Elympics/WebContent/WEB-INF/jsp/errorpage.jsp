@@ -9,7 +9,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 <div align="center" >
 <h1>Errore</h1>
-<p>Sono stati immessi campi sbagliati, esegui il login!</p>
+<p>E' necessario il login!</p>
 </div>
 <jsp:include page="footer.jsp"></jsp:include>
 </body>
