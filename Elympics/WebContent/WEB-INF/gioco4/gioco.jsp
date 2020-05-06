@@ -250,21 +250,26 @@
         
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="init()">Close</button>
-          <button type="button" class="btn btn-info" data-dismiss="modal" onclick="play()">Gioca</button>
-        
+          <input type="button" class="btn btn-danger" data-dismiss="modal" value="Close" class="btn" form="formSalvataggio" onclick="submitClose()"></input>
+          <input type="button"  class="btn btn-info" data-dismiss="modal" value="Save" class="btn" form="formSalvataggio"
+          	onclick="submitSave()"></input>
 		</div>
         
       </div>
     </div>
   </div>
-
-<form method="POST" action="salvapartita">
+<script type="text/javascript">
+  function submitSave(){
+	  document.getElementById("formSalvataggio").submit();
+  }
+  function submitClose(){
+	  document.getElementById("formSalvataggio").action="gioco?id=4";
+	  document.getElementById("formSalvataggio").submit();
+  }
+  </script>
+	<form method="POST" action="salvapartita" id="formSalvataggio"> 
 		<input type="hidden" value="4" name="gioco"></input>
 		<input type ="hidden" value="0" name="punteggio" id="punteggio"></input>
-		<input type="submit"  value="Salva" class="btn"></input>
 	</form>
-<p id="posizioneOmino"></p>
-<p id="messaggioDebug"></p>
 </body>
 </html>

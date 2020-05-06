@@ -284,7 +284,6 @@
 	<form method="POST" action="salvapartita" id="formSalvataggio"> 
 		<input type="hidden" value="3" name="gioco"></input>
 		<input type ="hidden" value="0" name="punteggio" id="punteggio"></input>
-		<input type="submit"  value="Salva" class="btn"></input>
 	</form>
 </body>
 </html>
