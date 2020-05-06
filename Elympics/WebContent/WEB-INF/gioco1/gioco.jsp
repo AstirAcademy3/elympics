@@ -227,8 +227,10 @@
 			<img id="c9_17" src="gioco1//img1/0.jpg"class="g">
 			<img id="c9_18" src="gioco1//img1/0.jpg"class="g">
 			<img id="c9_19" src="gioco1//img1/0.jpg"class="g">
+			<br>
+			<input type="button" onClick="disegnaPiano()" value="Gioca" style="margin-top: 20px;"></input>
 		</div>
-		<input type="button" onClick="disegnaPiano()" value="Gioca" ></input>
+
 		<input type="hidden" id="btnPills"onClick="generaPillole()" value="Genera pillole"  class="btn"></input>
 		<input type="hidden" onClick="generaOstacolo()" value="Genera ostacolo" class="btn"></input>
 
@@ -281,7 +283,6 @@
 	<form method="POST" action="salvapartita" id="formSalvataggio"> 
 		<input type="hidden" value="1" name="gioco"></input>
 		<input type ="hidden" value="0" name="punteggio" id="punteggio"></input>
-		<input type="submit"  value="Salva" class="btn"></input>
 	</form>
 </body>
 </html>
