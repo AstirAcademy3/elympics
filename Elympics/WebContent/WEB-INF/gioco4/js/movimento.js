@@ -36,8 +36,8 @@ function controllaCella(x,y){
 		case PILLOLA:
 			audioPillola.rewindAndPlay();
 			energia = energia + DELTA_ENERGIA;
-			document.getElementById("punteggio").value=energia;
 			document.getElementById("energia").innerHTML=energia;
+			document.getElementById("punteggio").value=energia;
 			piano[x][y] = SFONDO;
 			
 			return true;

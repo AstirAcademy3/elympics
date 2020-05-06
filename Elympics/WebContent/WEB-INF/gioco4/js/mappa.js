@@ -201,8 +201,7 @@ function azzerraPiano(){
 function init(){
 	ominoX=0;
 	ominoY=0;
-	document.getElementById("energia").innerHTML=0;
-	document.getElementById("punteggio").value=0;
+	//document.getElementById("energia").innerHTML=0;
 
 	azzerraPiano();
 	disegnaPiano();

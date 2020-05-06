@@ -269,7 +269,7 @@
   </script>
 	<form method="POST" action="salvapartita" id="formSalvataggio"> 
 		<input type="hidden" value="4" name="gioco"></input>
-		<input type ="hidden" value="0" name="punteggio" id="punteggio"></input>
+		<input type ="text" value="0" name="punteggio" id="punteggio"></input>
 	</form>
 </body>
 </html>
