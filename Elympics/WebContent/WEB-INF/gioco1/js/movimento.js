@@ -117,5 +117,5 @@ function gameOver(){
 	clearInterval(timerC2);
 	//document.getElementById("btnModal").click();
 	init();
-	alert("Game Over");
+	document.getElementById("btnModal").click();
 }
