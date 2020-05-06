@@ -235,9 +235,6 @@
 <img id="c9_19" src="gioco3/img1/0.jpg">
 <br>
 
-
-<input type="button" onClick="generaPillole()"      value="genera pillole" ></input>
-<input type="button" onClick="generaOstacolo()"     value="genera ostacolo" ></input>
 <input type="button" onClick="disegnaPiano()"       value="disegna piano" ></input>
 
 <p id="posizioneOmino"></p>

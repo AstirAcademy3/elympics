@@ -28,17 +28,14 @@ function checkKeyPress (event){
 
 
 function controllaCella(x,y){
-	switch (piano[x][y]){
-		case ARMA:
-			omino = ominoConSpada;
-			piano[x][y] = SFONDO; 
-			return true; 	
+	switch (piano[x][y]){ 	
 		case OSTACOLO: 
 			return false; 
 		case PILLOLA:
 			audioPillola.rewindAndPlay();
 			energia = energia + DELTA_ENERGIA;
 			document.getElementById("energia").innerHTML=energia;
+			document.getElementById("punteggio").value=energia;
 			piano[x][y] = SFONDO;
 			countPillole--;
 			if (countPillole==0){
@@ -83,8 +80,8 @@ function Cacciatore (x,y,nome){
 
 var c1  = new Cacciatore(7,7,"blu");
 var c2  = new Cacciatore(0,19,"rosso");
-var timerC1 =setInterval(avviaCacciatore1,1010);
-var timerC2 =setInterval(avviaCacciatore2,1000);
+var timerC1 =setInterval(avviaCacciatore1,500);
+var timerC2 =setInterval(avviaCacciatore2,510);
 
 function avviaCacciatore1(){
 	c1.insegui();
