@@ -3,14 +3,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
 	<meta charset="ISO-8859-1">
 	<title>Registrati</title>
+	<!-- <style>
+	input:invalid{
+	border-color:red;
+	}
+	</style>-->
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -30,7 +35,7 @@
 	    </div>
 	    <div class="form-group col-md-6">
 	      <label for="inputPassword4">Username</label>
-	      <input type="text" class="form-control" name="username" id="username">
+	      <input type="text" class="form-control" name="username" id="username" required>
 	    </div>
 	  </div>
 	  <div class="form-row">
