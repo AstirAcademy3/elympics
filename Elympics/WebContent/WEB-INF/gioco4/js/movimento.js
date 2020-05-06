@@ -104,6 +104,7 @@ function gameOver(){
 	clearInterval(timerC2);
 	clearInterval(timerC3);
 	clearInterval(timerPillole);
+	clearInterval(timerOstacolo);
 	document.getElementById("btnModal").click();
 	
 }
