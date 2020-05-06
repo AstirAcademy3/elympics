@@ -25,6 +25,7 @@ var pathImg = "gioco4/img1/";
 
 var timer;
 var timerPillole;
+var timerOstacolo;
 
 // dichiarazione variabili di lavoro
 var i=0;
@@ -47,7 +48,7 @@ for (var i=0; i<R; i++) {
 
 // posizionamento di un ostacolo per esempio
 piano[4][4] = OSTACOLO;
-piano[armaX][armaY] = ARMA;
+
 
 function mostraMatriceHTML(){
 	var s = "";
@@ -70,7 +71,7 @@ function disegnaPiano(){
 	// disegna l'omino in una data posizione
 	disegnaCellaSpeciale(ominoX,ominoY,omino); 
 	// disegna l'arma in una data posizione
-	disegnaCellaSpeciale(armaX,armaY,ARMA);
+	//disegnaCellaSpeciale(armaX,armaY,ARMA);
 } 
 
 function generaPillole(){
@@ -108,7 +109,8 @@ function play(){
 	ominoX = 0; 
     ominoY = 0;
 	testa= 1;
-	timerPillola= setInterval(generaPillola, 1000);
+	timerPillola= setInterval(generaPillola, 1500);
+	timerOstacolo= setInterval(generaOstacolo, 5000);
 	disegnaPiano();
 	// disegna l'omino in una data posizione
 	disegnaCellaSpeciale(ominoX,ominoY,omino); 
@@ -155,8 +157,8 @@ function disegnaCacciatori(){
 	c3 =new Cacciatore(0,19,"rosso");
 
 	timerC1= setInterval("c1.insegui()", 1000); 
-	timerC2= setInterval("c2.insegui()", 5000); 
-	timerC3= setInterval("c3.insegui()", 10000); 
+	timerC2= setInterval("c2.insegui()", 3000); 
+	timerC3= setInterval("c3.insegui()", 5000); 
 }
 
 
