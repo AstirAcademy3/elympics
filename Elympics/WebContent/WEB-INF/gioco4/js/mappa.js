@@ -154,9 +154,9 @@ function disegnaCacciatori(){
 	c2 =new Cacciatore(0,19,"rosso");
 	c3 =new Cacciatore(0,19,"rosso");
 
-	//timerC1= setInterval("c1.insegui()", 1000); 
-	//timerC2= setInterval("c2.insegui()", 5000); 
-	//timerC3= setInterval("c3.insegui()", 10000); 
+	timerC1= setInterval("c1.insegui()", 1000); 
+	timerC2= setInterval("c2.insegui()", 5000); 
+	timerC3= setInterval("c3.insegui()", 10000); 
 }
 
 
@@ -197,7 +197,11 @@ function azzerraPiano(){
 	}	
 }
 function init(){
-	
+	ominoX=0;
+	ominoY=0;
+	document.getElementById("energia").innerHTML=0;
+	document.getElementById("punteggio").value=0;
+
 	azzerraPiano();
 	disegnaPiano();
 	disegnaCacciatori();

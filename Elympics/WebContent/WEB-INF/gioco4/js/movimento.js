@@ -37,10 +37,9 @@ function controllaCella(x,y){
 			audioPillola.rewindAndPlay();
 			energia = energia + DELTA_ENERGIA;
 			document.getElementById("punteggio").value=energia;
-			document.getElementById("energia").value=energia;
+			document.getElementById("energia").innerHTML=energia;
 			piano[x][y] = SFONDO;
-			countPillole--;
-		
+			
 			return true;
 		default: 
 			return true; 
@@ -99,16 +98,14 @@ function Cacciatore (x,y,nome){
 }
 
 function gameOver(){
-	
+	init()
 	
 	clearInterval(timerC1);
 	clearInterval(timerC2);
 	clearInterval(timerC3);
 	clearInterval(timerPillole);
-	azzerraPiano();
-	disegnaPiano();
 	document.getElementById("btnModal").click();
-	alert("Game Over!");
+	
 }
 
 

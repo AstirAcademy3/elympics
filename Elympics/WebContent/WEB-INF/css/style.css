@@ -110,6 +110,10 @@ tbody{
 .game{
 	float: both;
 	height: 550px;
+<<<<<<< HEAD
+=======
+	margin-top: 10px !important;
+>>>>>>> 7e269a45f573e9f28a53abc7d172748e36d1633b
 	width: 95%;
 	margin: auto;
 }
