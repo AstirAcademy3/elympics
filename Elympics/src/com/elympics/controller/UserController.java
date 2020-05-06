@@ -96,7 +96,7 @@ public class UserController {
 	//read the provided form data
 	public String creazione(@RequestParam("nome") String nome,@RequestParam("cognome") String cognome,
 			@RequestParam("username") String username,@RequestParam("password") String password,
-			@RequestParam("email") String email,Model m)
+			@RequestParam("email") String email,@RequestParam("paese") String paese, Model m)
 	{
 		Date data = new Date();
 		UserManager manager = new UserManager();
@@ -107,6 +107,8 @@ public class UserController {
 		user.setUsername(username);
 		user.setPassword(password);
 		user.setMail(email);
+		user.setPaese(paese);
+		System.out.println("post inserimento dati" + user);
 		try {
 			 manager.crea(user);
 		} catch (Exception e) {

@@ -14,10 +14,8 @@ var PILLOLA = 1;
 var DELTA_ENERGIA = 20;
 var OSTACOLO=3; 
 var SFONDO = 0;
-var ARMA=2;
 
 var omino = "omino";
-var ominoConSpada = "ominoConSpada";
 
 var pathImg = "gioco3/img1/";
 
@@ -43,19 +41,6 @@ for (var i=0; i<R; i++) {
 
 // posizionamento di un ostacolo per esempio
 piano[4][4] = OSTACOLO;
-piano[armaX][armaY] = ARMA;
-
-function mostraMatriceHTML(){
-	var s = "";
-
-	for (var i=0; i<R; i++) {
-		for (var j=0; j<C;j++){
-			s = s + piano[i][j] + " " ;
-		}
-		s = s + "<br>";
-	}
-	document.getElementById("messaggioDebug").innerHTML=s; 
-}
 
 function azzerraPiano(){
 		for (var i=0; i<R; i++) {
@@ -74,15 +59,16 @@ function disegnaPiano(){
 			piano[i][j]=SFONDO; // si assegna un valore di default a tutte le celle
 		}
 	}
+	generaPillole();
+	generaOstacoli();
 	for (var i=0; i<R; i++){
 		for (var j=0; j<C;j++){
 			disegnaCella(i,j);
 		}
 	}
 	// disegna l'omino in una data posizione
-	disegnaCellaSpeciale(ominoX,ominoY,omino); 
-	// disegna l'arma in una data posizione
-	disegnaCellaSpeciale(armaX,armaY,ARMA);
+	disegnaCellaSpeciale(ominoX,ominoY,omino);
+	countPillole ++; //vanno raccolti tutti, meglio contarli
 } 
 
 function init(){
@@ -96,28 +82,35 @@ function init(){
 }
 
 function generaPillole(){
-    countPillole ++; //vanno raccolti tutti, meglio contarli
-	generaOggetto(PILLOLA);
+    //vanno raccolti tutti, meglio contarli
+    for(var i= 0; i<10; i++){
+    	generaOggetto(PILLOLA);
+    	countPillole ++;
+    }
 }
 
-function generaOstacolo(){
-	generaOggetto(OSTACOLO);
+function generaOstacoli(){
+	for(var i=0; i<20; i++){
+		generaOggetto(OSTACOLO);
+	}
 }
 
 function generaOggetto(valOggetto){
 	// si genera un indice di riga casuale tra 0 e R
 	var r = Math.random(); 
-	rx = Math.round( r * R);
+	rx = Math.floor( r * R);
 	// si genera un indice di colonna casuale tra 0 e C
 	var c = Math.random(); 
-	ry = Math.round( c * C);
+	ry = Math.floor( c * C);
 	// utilizzando rx e rc si ha una posizione casuale nel piano di gioco
-	piano[rx][ry] = valOggetto; //posiziona oggetto nella matrice
-	// in rx, ry c'è un nuovo valore quindi meglio ridisegnare la cella
-	disegnaCella(rx,ry);
-	
-	
-}
+	if(piano[rx][ry] == 0){
+		piano[rx][ry] = valOggetto; //posiziona oggetto nella matrice
+		disegnaCella(rx,ry);
+	}
+	else{
+		generaOggetto(valOggetto);
+	}
+}	
 
 function disegnaCella(i,j){
 	var id = "c"+i+"_"+j;

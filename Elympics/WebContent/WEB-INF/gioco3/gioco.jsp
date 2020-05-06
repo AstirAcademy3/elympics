@@ -15,6 +15,7 @@
 <script type="text/javascript" src="gioco3/js/movimento.js"></script>
 </head>
 <body onkeydown="checkKeyDown(event);" onkeypress="checkKeyPress(event)" style="background-color: blue;">
+	<jsp:include page="../jsp/header.jsp"></jsp:include>
 
 <div class="progress">
   <div id="barraTempo" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
@@ -234,9 +235,6 @@
 <img id="c9_19" src="gioco3/img1/0.jpg">
 <br>
 
-
-<input type="button" onClick="generaPillole()"      value="genera pillole" ></input>
-<input type="button" onClick="generaOstacolo()"     value="genera ostacolo" ></input>
 <input type="button" onClick="disegnaPiano()"       value="disegna piano" ></input>
 
 <p id="posizioneOmino"></p>

@@ -17,7 +17,7 @@
 	<jsp:include page="../jsp/header.jsp"></jsp:include>
 	<div class="container">
 		<div class="game">
-			<p class="txt">ENERGIA: </p><p id="energia" class="txt">0</p>
+			<p class="txt">Punteggio: </p><p id="energia" class="txt">0</p>
 			<img id="c0_0" src="gioco1/img1/0.jpg" class="g">
 			<img id="c0_1" src="gioco1//img1/0.jpg" class="g">
 			<img id="c0_2" src="gioco1//img1/0.jpg" class="g">
@@ -227,22 +227,62 @@
 			<img id="c9_17" src="gioco1//img1/0.jpg"class="g">
 			<img id="c9_18" src="gioco1//img1/0.jpg"class="g">
 			<img id="c9_19" src="gioco1//img1/0.jpg"class="g">
+			<br>
+			<input type="button" onClick="disegnaPiano()" value="Gioca" style="margin-top: 20px;"></input>
 		</div>
 
 		<input type="hidden" id="btnPills"onClick="generaPillole()" value="Genera pillole"  class="btn"></input>
 		<input type="hidden" onClick="generaOstacolo()" value="Genera ostacolo" class="btn"></input>
-		<input type="button" onClick="disegnaPiano()" value="Gioca" class="btn"></input>
+
 
 		<p id="posizioneOmino"></p>
 		<p id="messaggioDebug"></p>
 		
-
-		<form method="POST" action="salvapartita">
-		<input type ="hidden" name="punteggio" id="punteggio" value="" ></input>
-		<input type ="hidden" name="gioco" id="gioco" value="1" ></input>
-
-		<input type="submit"  value="Salva" class="btn"></input>
-		</form>
+		
+		
 	</div>
+<button hidden id="btnModal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Game Over!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Hai finito la partita!
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+		  <input type="button" class="btn btn-danger" data-dismiss="modal" value="Close" class="btn" form="formSalvataggio" onclick="submitClose()"></input>
+          <input type="button"  class="btn btn-info" data-dismiss="modal" value="Save" class="btn" form="formSalvataggio"
+          	onclick="submitSave()"></input>
+		</div>
+        
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+  function submitSave(){
+	  document.getElementById("formSalvataggio").submit();
+  }
+  function submitClose(){
+	  document.getElementById("formSalvataggio").action="gioco?id=1";
+	  document.getElementById("formSalvataggio").submit();
+  }
+  </script>
+	<form method="POST" action="salvapartita" id="formSalvataggio"> 
+		<input type="hidden" value="1" name="gioco"></input>
+		<input type ="hidden" value="0" name="punteggio" id="punteggio"></input>
+	</form>
 </body>
 </html>
