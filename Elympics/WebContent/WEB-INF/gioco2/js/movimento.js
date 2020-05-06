@@ -70,8 +70,6 @@ function gameOver(){
 	//document.getElementById("pianoGioco").innerHTML = "GAME OVER"; 
 	//alert("GAME OVER!");
 	clearInterval(timer);
-	clearInterval(timerC1);
-	clearInterval(timerC2);
 	document.getElementById("btnModal").click();
 
 }

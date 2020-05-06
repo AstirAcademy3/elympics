@@ -39,12 +39,11 @@ function controllaCella(x,y){
 			audioPillola.rewindAndPlay();
 			energia = energia + DELTA_ENERGIA;
 			document.getElementById("energia").innerHTML=energia;
-			document.getElementById("punteggio").value=energia;
 			piano[x][y] = SFONDO;
 			countPillole--;
 			if (countPillole==0){
 				document.getElementById("energia").innerHTML="<img src=\"coppa.jpg\" >";
-				alert("Complimenti, hai vinto!!");
+				document.getElementById("btnModal").click();
 			}
 			return true;
 		default: 
@@ -104,6 +103,10 @@ function sposta (daX,daY, aX,aY){
 		ominoX= aX;
 		ominoY= aY;
 		disegnaOmino();
+	} else {
+		
+		//non può spostarsi...
+		
 	}
 }
 var finito = false;

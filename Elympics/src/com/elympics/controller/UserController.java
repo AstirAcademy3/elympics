@@ -75,10 +75,10 @@ public class UserController {
 			UserManager manager = new UserManager();
 			List<RigaClassificaVO> lrc = new ArrayList<RigaClassificaVO>();
 			//caricare i giochi che hanno almeno una partita con il paese dell'utente 
-		//	List<Gioco> giochi = manager.getGiochiPartitaPerPaese(u);
-			
-			for(int i=1;i<4;i++) {
-				Gioco gioco=new Gioco();
+
+			//List<Gioco> giochi = manager.getGiochiPartitaPerPaese(u);
+			for(int i=1; i<4;i++) {
+				Gioco gioco = new Gioco();
 				gioco.setId(i);
 				RigaClassificaVO rc=manager.getPrimoClassificatoPerPaese(u, gioco);
 			lrc.add(rc);
