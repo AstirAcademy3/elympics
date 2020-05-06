@@ -115,10 +115,17 @@ function disegnaCellaSpeciale(i,j,valore) {
 
 function init(){
 	
-	azzerraPiano();
+	
 	ominoX=0;
 	ominoY=0;
-	disegnaPiano();
-	
-	
+	azzerraPiano();
+}
+
+function azzerraPiano(){
+	for (var i=0; i<R; i++) {
+	piano[i]=new Array();  // ogni riga contiene un array: si ha così una matrice
+	for (var j=0; j<C;j++){
+		piano[i][j]=SFONDO; // si assegna un valore di default a tutte le celle
+	}
+}	
 }
