@@ -44,14 +44,15 @@
 		</div>
 	  </div>
 	  <div class="form-row">
-	    <div class="form-group col-md-5">
-	       <label for="inputCity">Giorno di nascita</label>
+	    <!-- <div class="form-group col-md-5">
+	       <label for="inputCity"></label>
 	       <div class="form-group">
                 <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-                    <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4"/>
+                    <<input type="date" class="form-control datetimepicker-input" data-target="#datetimepicker4"/>
                     <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>
+                    <input type="date">
                 </div>
             </div>
 	       <script type="text/javascript">
@@ -60,9 +61,10 @@
 		                format: 'L'
 		            });
 		        });
-		   </script>
+		   </script>-->
 	    </div>
-	    <div class="form-group col-md-4">
+	    <div class="form-row">
+	    <div class="col-md-6">
 	      <label for="paese">State</label>
 	      <select name="paese" id="paese" class="form-control">
 	        <option selected>Scegli...</option>
@@ -93,8 +95,8 @@
 	        <option>Svezia</option>
 	        <option>Ungheria</option>
 	      </select>
-	    </div>
-	    <div class="form-group col-md-3">
+	      </div>
+	    <div class="col-md-6">
 	      <label for="inputState">Sesso</label>
 	      <select id="inputState" class="form-control">
 	        <option selected>Choose...</option>
