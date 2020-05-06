@@ -65,9 +65,9 @@ function disegnaPiano(){
 	}
 	// disegna l'omino in una data posizione
 	disegnaCellaSpeciale(ominoX,ominoY,omino); 
-	document.getElementById("Punteggio: ").innerHTML=testa;
+	document.getElementById("punteggio").value=testa;
 } 
-
+	
 function generaOggetto(valOggetto){
 	// si genera un indice di riga casuale tra 0 e R
 	var r = Math.random(); 

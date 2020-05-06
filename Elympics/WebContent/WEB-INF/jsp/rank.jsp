@@ -5,10 +5,9 @@ d<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 <!DOCTYPE html>
 <html>
 <head>
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<script src="js/bootstrap.min.js"></script>
-	
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/bootstrap.min.js"></script>
 <meta charset="ISO-8859-1">
 <title>Ranking</title>
 </head>

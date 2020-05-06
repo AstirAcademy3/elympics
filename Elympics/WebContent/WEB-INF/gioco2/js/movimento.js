@@ -66,12 +66,11 @@ function sposta (daX,daY, aX,aY){
 }
 
 function gameOver(){
-	init();
+	//init();
 	//document.getElementById("pianoGioco").innerHTML = "GAME OVER"; 
 	//alert("GAME OVER!");
-	clearInterval(timer);
+	//clearInterval(timer);
 	document.getElementById("btnModal").click();
-
 }
 
 function su(){
